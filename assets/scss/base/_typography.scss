@@ -1,0 +1,186 @@
+// Primary Font
+@font-face {
+	font-family: $font-primary-light;
+	src: url("../fonts/Source_Sans_Pro/SourceSansPro-Light.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: $font-primary-regular;
+	src: url("../fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf") format("truetype");
+}
+
+// There is no Medium font weight
+// @font-face {
+// 	font-family: $font-primary-medium;
+// 	src: url("../../../fonts/Source_Sans_Pro/SourceSansPro-Medium.ttf") format("truetype");
+// }
+
+@font-face {
+	font-family: $font-primary-semibold;
+	src: url("../fonts/Source_Sans_Pro/SourceSansPro-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: $font-primary-bold;
+	src: url("../fonts/Source_Sans_Pro/SourceSansPro-Bold.ttf") format("truetype");
+}
+
+// Secoondary Font
+// @font-face {
+// 	font-family: $font-secondary-light;
+// 	src: url("../../../fonts/Raleway/Raleway-Light.ttf") format("truetype");
+// }
+
+// @font-face {
+// 	font-family: $font-secondary-regular;
+// 	src: url("../../../fonts/Raleway/Raleway-Regular.ttf") format("truetype");
+// }
+
+// @font-face {
+// 	font-family: $font-secondary-medium;
+// 	src: url("../../../fonts/Raleway/Raleway-Medium.ttf") format("truetype");
+// }
+
+// @font-face {
+// 	font-family: $font-secondary-semibold;
+// 	src: url("../../../fonts/Raleway/Raleway-SemiBold.ttf") format("truetype");
+// }
+
+// @font-face {
+// 	font-family: $font-secondary-bold;
+// 	src: url("../../../fonts/Raleway/Raleway-Bold.ttf") format("truetype");
+// }
+
+body {
+	font-family: $font-primary-regular;
+	font-style: normal;
+	font-weight: normal;
+	font-size: $size-sm;
+	line-height: 1.7;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: $secondary-color;
+	font-style: normal;
+	font-weight: normal;
+}
+
+h1 {
+	font-size: $size-xl;
+	font-family: $font-secondary-semibold;
+	line-height: 42px;
+	@include for-size(phone-only) {
+		font-size: $size-lg;
+		text-align: center;
+	}
+}
+
+h2 {
+	font-size: $size-lg;
+	font-family: $font-secondary-semibold;
+	line-height: 28px;
+
+	@include for-size(phone-only) {
+		font-size: $size-md;
+		text-align: center;
+	}
+}
+
+h3 {
+	font-family: $font-primary-bold;
+	font-weight: bold;
+	font-size: $size-md;
+	line-height: 29px;
+}
+
+h4 {
+	font-family: $font-primary-semibold;
+	font-size: $size-re;
+	line-height: 163.2%;
+}
+
+h5 {
+	font-family: $font-primary-semibold;
+	font-size: $size-sm;
+	line-height: 163.2%;
+}
+
+h6 {
+	font-family: $font-primary-semibold;
+	font-size: $size-xs;
+	line-height: 163.2%;
+}
+
+p {
+	color: $text-light-color;
+	font-family: $font-primary-regular;
+	font-size: $size-sm;
+	line-height: 169.7%;
+	max-width: 450px;
+
+	@include for-size(phone-only) {
+		font-size: $size-xs;
+		max-width: 100%;
+		text-align: center;
+	}
+}
+
+a {
+	color: $link-color;
+	font-family: $font-primary-regular;
+	font-size: $size-xs;
+	line-height: 24px;
+	letter-spacing: 0.07em;
+	text-transform: uppercase;
+	text-decoration-line: underline;
+}
+
+label {
+	color: $secondary-color;
+	font-family: $font-primary-regular;
+	font-size: $size-sm;
+	font-weight: 600;
+	line-height: 150.6%;
+	text-align: right;
+}
+input,
+textarea {
+	font-size: $size-sm;
+	line-height: 169.7%;
+	font-family: $font-primary-regular;
+
+	::placeholder {
+		color: $text-light-color !important;
+		opacity: 0.9;
+		font-size: inherit;
+	}
+	@include for-size(phone-only) {
+		font-size: $size-xs;
+	}
+}
+
+button,
+input.reset {
+	font-size: $size-sm;
+	line-height: $size-re;
+	@include for-size(phone-only) {
+		font-size: $size-xs !important;
+		line-height: $size-sm !important;
+	}
+}
+
+small {
+	color: $secondary-color;
+	font-family: $font-primary-regular;
+	font-size: $size-xs;
+	line-height: 169.7%;
+}
+
+.caption {
+	font-size: $size-small;
+}

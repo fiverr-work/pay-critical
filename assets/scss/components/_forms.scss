@@ -1,0 +1,18 @@
+﻿#form-activate {
+    max-width: 70rem;
+}
+
+#form-activate input {
+    width: 250px;
+
+
+}
+
+#form-activate input:disabled {
+    opacity: 0.4;
+}
+
+#form-activate #result {
+    max-width: 600px;
+}
+

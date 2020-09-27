@@ -1,0 +1,186 @@
+%button {
+	font-size: $size-small;
+	line-height: 24px;
+	text-align: center;
+	padding: 5px 17px;
+	border-radius: 4px;
+	font-family: $font-primary-semibold;
+	margin: 0;
+	cursor: default !important;
+	&:focus {
+		outline: 0;
+	}
+}
+
+.open-btn {
+	color: $open-color;
+	border-color: $open-color;
+	background-color: $open-bg;
+	@extend %button;
+	svg {
+		path {
+			stroke: $open-color;
+		}
+	}
+}
+
+.paid-btn {
+	color: $paid-color;
+	background-color: $paid-bg;
+	border-color: $paid-color;
+	@extend %button;
+	svg {
+		path {
+			stroke: $paid-color;
+		}
+	}
+}
+
+.cancelled-btn {
+	color: $cancel-color;
+	background-color: $cancel-bg;
+	border-color: $cancel-color;
+	@extend %button;
+	svg {
+		path {
+			stroke: $cancel-color;
+		}
+	}
+}
+
+.failed-btn {
+	color: $failed-color;
+	background-color: $failed-bg;
+	border-color: $failed-color;
+	@extend %button;
+	svg {
+		path {
+			stroke: $failed-color;
+		}
+	}
+}
+
+.expired-btn {
+	color: $expired-color;
+	background-color: $expired-bg;
+	border-color: $expired-color;
+	@extend %button;
+	svg {
+		path {
+			stroke: $expired-color;
+		}
+	}
+}
+
+%my-btn {
+	border-radius: 4px;
+	transition: all 0.4s ease-in-out;
+	padding: 10px 65px;
+	text-decoration: none;
+	text-align: center;
+	box-shadow: $shadow-1;
+	text-transform: capitalize;
+	@include ripple-effect;
+
+	@include for-size(phone-only) {
+		padding: 10px;
+		width: 100%;
+		display: block;
+		margin: 0 auto;
+	}
+}
+
+.main-btn {
+	@extend %my-btn;
+	color: $white-color;
+	background-color: $btn-bg;
+	border: 1px solid $btn-border;
+
+	&:hover {
+		background-color: $btn-border !important;
+		transition: background s ease-in-out !important;
+		color: $white-color;
+	}
+
+	&.disabled {
+		background-color: $btn-disabled;
+		border-color: $btn-disabled;
+		pointer-events: none;
+
+		&:hover {
+			background-color: $btn-disabled;
+		}
+	}
+
+	&-outline {
+		@extend .main-btn;
+		background: none;
+		border-radius: 0;
+		border-color: inherit;
+		padding: 14px 65px;
+		color: $link-color;
+
+		&:hover {
+			background-color: $link-color !important;
+			border-color: $link-color !important;
+		}
+
+		&.dark {
+			color: $secondary-color !important;
+			border-color: inherit !important;
+
+			&:hover {
+				color: $white-color !important;
+				background-color: $secondary-color !important;
+			}
+		}
+	}
+}
+
+.btn-sec {
+	@extend %my-btn;
+	color: $white-color;
+	background-color: $warning-light-color;
+	border-color: $warning-light-color;
+
+	&:hover {
+		background-color: $warning-dark-color;
+		border-color: $warning-dark-color;
+	}
+}
+
+.btn-default {
+	@extend %my-btn;
+	border: none;
+	background: none;
+	color: $text-light-color !important;
+	line-height: 169.7%;
+	box-shadow: none;
+}
+
+.sub-link {
+	font-size: 10px;
+	margin-bottom: 10px;
+	display: inline-flex;
+	align-items: center;
+	color: $link-color;
+
+	&:hover {
+		color: $primary-color;
+	}
+
+	svg {
+		margin-left: 5px;
+	}
+}
+
+input.reset {
+	color: $text-light-color;
+	background: none;
+	border: none;
+	border-radius: 0;
+	cursor: pointer;
+	border-bottom: 1px solid;
+	padding: 0px !important;
+	outline: 0;
+}

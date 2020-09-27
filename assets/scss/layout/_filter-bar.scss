@@ -1,0 +1,125 @@
+﻿.filter-bar {
+    background-color: $white-color;
+    box-shadow: $shadow-2;
+    padding: 10px 16px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    .dropdowns {
+        display: inline-block;
+
+        &--container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+
+    .tags {
+        .tag {
+            border-radius: 2px;
+            padding: 0px 5px;
+            transition: color 0.4s ease-in-out, background 0.4s ease-in-out;
+            margin: 5px;
+
+            &:hover {
+                color: $white-color;
+
+                .close-tag {
+                    path {
+                        stroke: $white-color;
+                        transition: all 0.4s ease-in-out;
+                    }
+                }
+            }
+
+            .close-tag {
+                width: 15px;
+                margin-right: 5px;
+                cursor: pointer;
+            }
+        }
+
+        @include for-size(phone-only) {
+            justify-content: center;
+        }
+    }
+
+    .new-item {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+
+        a {
+            padding: 8px 25px;
+            line-height: 24px;
+        }
+    }
+
+    @include for-size(tablet-portrait-up) {
+        & > div {
+            width: 100%;
+        }
+
+        .search {
+            margin-bottom: 13px;
+        }
+
+        .tags {
+            margin-bottom: -10px;
+        }
+
+        .new-item {
+            margin-top: 10px;
+
+            a {
+                margin: 0 auto;
+            }
+        }
+    }
+
+    @include for-size(phone-only) {
+        .dropdowns {
+            &--container {
+                flex-wrap: nowrap;
+                justify-content: space-between;
+
+                & > * {
+                    margin: 0 !important;
+                }
+
+                .multiple-select,
+                .custom-select-trigger {
+                    padding: 12px 0;
+                    min-width: 115px;
+                }
+
+                .multiple-select {
+                    svg {
+                        left: 10px;
+                        height: 14px;
+                    }
+                }
+
+                .custom-list {
+                    svg {
+                        left: 15px;
+                        height: 14px;
+                    }
+                }
+
+                .multiple-select:after,
+                .custom-select-trigger:after {
+                    right: 10px;
+                }
+            }
+        }
+
+        .new-item {
+            a {
+                padding: 10px 25px;
+            }
+        }
+    }
+}

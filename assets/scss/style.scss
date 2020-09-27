@@ -1,0 +1,47 @@
+// 1 - Utils
+@import "utils/default_variables";
+// @import "utils/variables";
+@import "utils/mixins";
+@import "utils/helpers";
+
+// 2 - Vendors
+// @import "bootstrap/bootstrap";
+@import "vendors/animate";
+@import "vendors/phone_field";
+@import "vendors/bootstrap";
+
+// 3 - Base
+@import "base/reset";
+@import "base/typography";
+
+// 4 - Layout
+@import "layout/navigation";
+@import "layout/sidebar";
+@import "layout/filter-bar";
+@import "layout/dashboard";
+@import "layout/table";
+
+// 5 - Components
+@import "components/buttons";
+@import "components/custom_select";
+@import "components/icons";
+@import "components/alert";
+@import "components/forms";
+@import "components/search";
+@import "components/multiple_selection";
+@import "components/input_fiels";
+@import "components/pagination";
+// @import "components/loaders.scss";
+@import "components/modal";
+@import "components/switch";
+@import "components/card";
+
+// 5 - Pages
+@import "pages/transactions";
+@import "pages/receive_payment";
+@import "pages/menu-subpage";
+@import "pages/simulator";
+@import "pages/developers";
+
+// 6 - Overrides
+@import "utils/_overrides.scss";

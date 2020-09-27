@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" dir="ltr" lang="en">
+<!--<![endif]-->
+
+<head>
+	<title>Payment simulator</title>
+	<!-- Always force latest IE rendering engine or request Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!-- meta character set -->
+	<meta charset="UTF-8" />
+	<!-- Mobile Specific Meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Meta Description, Keywords and Author -->
+	<meta name="Keywords" content="">
+	<meta name="author" content="">
+	<meta name="Description" content="">
+
+	<!-- Stylesheet
+	================================================== -->
+	<link rel="stylesheet" href="../assets/css/style.css">
+
+	<!-- Favicon
+	================================================== -->
+	<link rel="shortcut icon" href="">
+
+	<!-- JavaScript
+	================================================== -->
+	<!--[if lt IE 9]>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+		<![endif]-->
+
+	<!-- Modernizer Script for old Browsers -->
+	<!--script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script-->
+</head>
+
+<body>
+
+	<aside id="side-navbar">
+		<div class="logo">
+			<a href="../home/index.html">
+				<img src="../assets/img/logo.svg" alt="Ticket Serviços">
+			</a>
+		</div>
+		<label>Balence</label>
+		<div class="balance">
+			<div id="result-balance">
+				€ 9.583,00
+			</div>
+			<img class="toggle-balance icon eye-icon m-0 eye-off" src="../assets/img/icons/eye-off.svg" />
+			<svg class="toggle-balance icon eye-icon m-0 eye-on d-none" width="24" height="24" viewBox="0 0 24 24"
+				fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12C23 12 19 20 12 20C5 20 1 12 1 12Z" stroke="#DCE0DE"
+					stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+				<path
+					d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z"
+					stroke="#DCE0DE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+			</svg>
+		</div>
+		<input type="checkbox" class="d-none" id="menu-checked">
+		<label class="navbar-toggler-label m-0" for="menu-checked">
+			<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M11 20H29" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+				<path d="M11 14H29" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+				<path d="M11 26H29" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+			</svg>
+		</label>
+		<div class="navbar">
+			<label class="close" for="menu-checked">
+				<svg height="12" width="12" viewBox="0 0 329.26933 329" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="m194.800781 164.769531 128.210938-128.214843c8.34375-8.339844 8.34375-21.824219 0-30.164063-8.339844-8.339844-21.824219-8.339844-30.164063 0l-128.214844 128.214844-128.210937-128.214844c-8.34375-8.339844-21.824219-8.339844-30.164063 0-8.34375 8.339844-8.34375 21.824219 0 30.164063l128.210938 128.214843-128.210938 128.214844c-8.34375 8.339844-8.34375 21.824219 0 30.164063 4.15625 4.160156 9.621094 6.25 15.082032 6.25 5.460937 0 10.921875-2.089844 15.082031-6.25l128.210937-128.214844 128.214844 128.214844c4.160156 4.160156 9.621094 6.25 15.082032 6.25 5.460937 0 10.921874-2.089844 15.082031-6.25 8.34375-8.339844 8.34375-21.824219 0-30.164063zm0 0" />
+				</svg>
+			</label>
+			<ul>
+				<li class="nav-link animated fadeIn">
+					<a href="../profile/index.html">
+						<svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M16.6666 17.5V15.8333C16.6666 14.9493 16.3154 14.1014 15.6903 13.4763C15.0652 12.8512 14.2173 12.5 13.3333 12.5H6.66658C5.78253 12.5 4.93468 12.8512 4.30956 13.4763C3.68444 14.1014 3.33325 14.9493 3.33325 15.8333V17.5"
+								stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+							<path
+								d="M10.0001 9.16667C11.841 9.16667 13.3334 7.67428 13.3334 5.83333C13.3334 3.99238 11.841 2.5 10.0001 2.5C8.15913 2.5 6.66675 3.99238 6.66675 5.83333C6.66675 7.67428 8.15913 9.16667 10.0001 9.16667Z"
+								stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+						<span>Profile</span>
+					</a>
+					<span class="submenu-arrow">
+						<svg width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M1 1L4.75671 5.17412C5.15395 5.6155 5.84605 5.6155 6.24329 5.17412L7.75 3.5L10 1"
+								stroke="white" stroke-width="2" />
+						</svg>
+					</span>
+					<ul class="submenu">
+						<li><a href="#">Change Password</a></li>
+						<li><a href="#">Close Account</a></li>
+					</ul>
+				</li>
+				<li class="nav-link animated fadeIn">
+					<a href="../home/index.html">
+						<svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M2.5 7.50001L10 1.66667L17.5 7.50001V16.6667C17.5 17.1087 17.3244 17.5326 17.0118 17.8452C16.6993 18.1577 16.2754 18.3333 15.8333 18.3333H4.16667C3.72464 18.3333 3.30072 18.1577 2.98816 17.8452C2.67559 17.5326 2.5 17.1087 2.5 16.6667V7.50001Z"
+								stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+						<span>Home</span>
+					</a>
+				</li>
+				<li class="nav-link animated fadeIn">
+					<a href="../transactions/index.html">
+						<svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<g clip-path="url(#clip0)">
+								<path d="M9.86426 1.54955L14.6294 3.09908L13.0798 7.8642" stroke="black"
+									stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M9.7334 18.4505L4.9683 16.9009L6.51784 12.1358" stroke="black" stroke-width="2"
+									stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M2.00004 9.53023L14.6294 3.09908" stroke="black" stroke-width="2"
+									stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M17.5976 10.4698L4.9683 16.9009" stroke="black" stroke-width="2"
+									stroke-linecap="round" stroke-linejoin="round" />
+							</g>
+							<defs>
+								<clipPath id="clip0">
+									<path d="M0 0H20V20H0V0Z" fill="white" />
+								</clipPath>
+							</defs>
+						</svg>
+						<span>Transitions</span>
+					</a>
+				</li>
+				<li class="nav-link animated fadeIn">
+					<a href="../receive-pay/index.html">
+						<svg class="icon euro-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<g clip-path="url(#clip0)">
+								<path
+									d="M11.709 14.024C13.115 14.024 14.2993 13.4983 15.262 12.447L16.839 13.967C16.231 14.689 15.471 15.24 14.559 15.62C13.6597 16 12.6653 16.19 11.576 16.19C10.474 16.19 9.448 15.9873 8.498 15.582C7.56067 15.1767 6.76267 14.6067 6.104 13.872C5.458 13.1373 5.002 12.2887 4.736 11.326H2.57V9.996H4.489C4.47633 9.85667 4.47 9.64133 4.47 9.35C4.47 9.05867 4.47633 8.84333 4.489 8.704H2.57V7.374H4.736C5.002 6.41133 5.458 5.56267 6.104 4.828C6.76267 4.09333 7.56067 3.52333 8.498 3.118C9.448 2.71267 10.474 2.51 11.576 2.51C12.6653 2.51 13.6597 2.7 14.559 3.08C15.471 3.46 16.231 4.011 16.839 4.733L15.262 6.234C14.2993 5.19533 13.115 4.676 11.709 4.676C10.6957 4.676 9.80267 4.91667 9.03 5.398C8.27 5.87933 7.70633 6.538 7.339 7.374H12.792V8.704H6.978C6.95267 8.98267 6.94 9.198 6.94 9.35C6.94 9.502 6.95267 9.71733 6.978 9.996H12.792V11.326H7.339C7.70633 12.162 8.27 12.8207 9.03 13.302C9.80267 13.7833 10.6957 14.024 11.709 14.024Z"
+									fill="#222222" />
+							</g>
+							<defs>
+								<clipPath id="clip0">
+									<path d="M0 0H20V20H0V0Z" fill="white" />
+								</clipPath>
+							</defs>
+						</svg>
+						<span>Receive payment</span>
+					</a>
+				</li>
+				<li class="nav-link animated fadeIn">
+					<a href="../menu/index.html">
+						<svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M1.66797 2.5H6.66797C7.55202 2.5 8.39987 2.85119 9.02499 3.47631C9.65011 4.10143 10.0013 4.94928 10.0013 5.83333V17.5C10.0013 16.837 9.73791 16.2011 9.26907 15.7322C8.80023 15.2634 8.16434 15 7.5013 15H1.66797V2.5Z"
+								stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+							<path
+								d="M18.3333 2.5H13.3333C12.4493 2.5 11.6014 2.85119 10.9763 3.47631C10.3512 4.10143 10 4.94928 10 5.83333V17.5C10 16.837 10.2634 16.2011 10.7322 15.7322C11.2011 15.2634 11.837 15 12.5 15H18.3333V2.5Z"
+								stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+						<span>Menu</span>
+					</a>
+				</li>
+				<li class="nav-link animated fadeIn">
+					<a href="../orders/index.html">
+						<svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M13.332 3.33325H14.9987C15.4407 3.33325 15.8646 3.50885 16.1772 3.82141C16.4898 4.13397 16.6654 4.55789 16.6654 4.99992V16.6666C16.6654 17.1086 16.4898 17.5325 16.1772 17.8451C15.8646 18.1577 15.4407 18.3333 14.9987 18.3333H4.9987C4.55667 18.3333 4.13275 18.1577 3.82019 17.8451C3.50763 17.5325 3.33203 17.1086 3.33203 16.6666V4.99992C3.33203 4.55789 3.50763 4.13397 3.82019 3.82141C4.13275 3.50885 4.55667 3.33325 4.9987 3.33325H6.66536"
+								stroke="#F7F8F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+							<path
+								d="M12.5013 1.66675H7.5013C7.04106 1.66675 6.66797 2.03984 6.66797 2.50008V4.16675C6.66797 4.62699 7.04106 5.00008 7.5013 5.00008H12.5013C12.9615 5.00008 13.3346 4.62699 13.3346 4.16675V2.50008C13.3346 2.03984 12.9615 1.66675 12.5013 1.66675Z"
+								stroke="#F7F8F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+						<span>Orders</span>
+					</a>
+				</li>
+				<li class="nav-link animated fadeIn active">
+					<a href="./index.html">
+						<svg class="icon" width="14" height="20" viewBox="0 0 14 20" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M11.168 1.66699H2.83464C1.91416 1.66699 1.16797 2.41318 1.16797 3.33366V16.667C1.16797 17.5875 1.91416 18.3337 2.83464 18.3337H11.168C12.0884 18.3337 12.8346 17.5875 12.8346 16.667V3.33366C12.8346 2.41318 12.0884 1.66699 11.168 1.66699Z"
+								stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M7 15H7.00875" stroke="white" stroke-width="2" stroke-linecap="round"
+								stroke-linejoin="round" />
+						</svg>
+						<span>Payment Simulator</span>
+					</a>
+				</li>
+				<li class="nav-link animated fadeIn">
+					<a href="../developers/index.html">
+						<svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path d="M3.33325 14.1667L8.33325 9.16667L3.33325 4.16667" stroke="black" stroke-width="2"
+								stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M10 15.8333H16.6667" stroke="black" stroke-width="2" stroke-linecap="round"
+								stroke-linejoin="round" />
+						</svg>
+						<span>Developers</span>
+					</a>
+				</li>
+				<li class="nav-link animated fadeIn mt-auto">
+					<a href="#">
+						<svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M10.0001 18.3333C14.6025 18.3333 18.3334 14.6024 18.3334 10C18.3334 5.39763 14.6025 1.66667 10.0001 1.66667C5.39771 1.66667 1.66675 5.39763 1.66675 10C1.66675 14.6024 5.39771 18.3333 10.0001 18.3333Z"
+								stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+							<path
+								d="M7.57495 7.5C7.77087 6.94306 8.15758 6.47342 8.66658 6.17428C9.17558 5.87513 9.77403 5.76578 10.3559 5.86559C10.9378 5.96541 11.4656 6.26794 11.8458 6.71961C12.2261 7.17128 12.4342 7.74294 12.4333 8.33333C12.4333 10 9.93328 10.8333 9.93328 10.8333"
+								stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M10 14.1667H10.0083" stroke="black" stroke-width="2" stroke-linecap="round"
+								stroke-linejoin="round" />
+						</svg>
+						<span>Help center</span>
+					</a>
+				</li>
+				<li class="nav-link animated fadeIn">
+					<a href="#">
+						<svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M7.5 17.5H4.16667C3.72464 17.5 3.30072 17.3244 2.98816 17.0118C2.67559 16.6993 2.5 16.2754 2.5 15.8333V4.16667C2.5 3.72464 2.67559 3.30072 2.98816 2.98816C3.30072 2.67559 3.72464 2.5 4.16667 2.5H7.5"
+								stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M13.3333 14.1667L17.4999 10L13.3333 5.83334" stroke="black" stroke-width="2"
+								stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M17.5 10H7.5" stroke="black" stroke-width="2" stroke-linecap="round"
+								stroke-linejoin="round" />
+						</svg>
+						<span>Log out</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</aside>
+
+	<main>
+		<div class="header">
+			<h1>Payment simulator</h1>
+		</div>
+		<div class="body simulator">
+			<div class="row">
+				<form class="col-md-4 mb-5">
+					<label for="phone">Number</label>
+					<input type="tel" class="form-control" id="phone" placeholder="000 000 000" required>
+					<button type="submit" class="main-btn mb-4">Simulate</button>
+
+					<br><br>
+
+
+					<!-- An Other Payment -->
+					<div>
+						<a href="#" class="link">Make another payment with this number</a>
+					</div>
+
+					<br><br>
+
+
+					<!-- Waiting request -->
+					<!-- <button type="submit" class="main-btn disabled">Simulate</button> -->
+					<div class="waiting">
+						<p>Waiting for payment request</p>
+						<svg width="78" height="18" viewBox="0 0 78 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<circle cx="6" cy="9" r="6" fill="#02D871" />
+							<circle cx="26" cy="9" r="6" fill="#02D871" />
+							<circle cx="72" cy="9" r="6" fill="#02D871" />
+							<circle cx="49" cy="9" r="9" fill="#02D871" />
+						</svg>
+					</div>
+
+					<br>
+
+
+					<!-- Review payment -->
+					<!-- <button type="submit" class="main-btn disabled">Simulate</button> -->
+					<div class="review-payment">
+						<span>Payment ID</span>
+						<p>2020-04-10.31357</p>
+					</div>
+
+
+				</form>
+
+
+
+				<div class="col-md-8 iphone-container">
+					<div class="iphone">
+						<img src="../assets/img/illustrations/phone.png" class="bg-img" alt="">
+						<div class="content">
+							<div class="iphone-bar">
+								<span class="time">9:41</span>
+								<div class="icons">
+									<svg width="13" height="8" viewBox="0 0 13 8" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd"
+											d="M11.933 0.339844H11.2422C10.8606 0.339844 10.5513 0.64916 10.5513 1.03072V7.01832C10.5513 7.39988 10.8606 7.7092 11.2422 7.7092H11.933C12.3146 7.7092 12.6239 7.39988 12.6239 7.01832V1.03072C12.6239 0.64916 12.3146 0.339844 11.933 0.339844ZM8.01804 1.95191H8.70891C9.09047 1.95191 9.39979 2.26122 9.39979 2.64278V7.01834C9.39979 7.3999 9.09047 7.70922 8.70891 7.70922H8.01804C7.63647 7.70922 7.32716 7.3999 7.32716 7.01834V2.64278C7.32716 2.26122 7.63647 1.95191 8.01804 1.95191ZM5.48821 3.56397H4.79733C4.41577 3.56397 4.10645 3.87329 4.10645 4.25485V7.01836C4.10645 7.39992 4.41577 7.70923 4.79733 7.70923H5.48821C5.86977 7.70923 6.17908 7.39992 6.17908 7.01836V4.25485C6.17908 3.87329 5.86977 3.56397 5.48821 3.56397ZM2.26066 4.9461H1.56978C1.18822 4.9461 0.878906 5.25542 0.878906 5.63698V7.01874C0.878906 7.4003 1.18822 7.70961 1.56978 7.70961H2.26066C2.64222 7.70961 2.95154 7.4003 2.95154 7.01874V5.63698C2.95154 5.25542 2.64222 4.9461 2.26066 4.9461Z"
+											fill="black" />
+									</svg>
+									<svg width="11" height="8" viewBox="0 0 11 8" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd"
+											d="M5.37512 1.68571C6.91214 1.68578 8.39038 2.27587 9.50432 3.33401C9.5882 3.4157 9.72227 3.41467 9.80489 3.3317L10.6067 2.52314C10.6486 2.48106 10.6719 2.42406 10.6715 2.36475C10.6712 2.30543 10.6472 2.24871 10.6049 2.20712C7.68115 -0.592476 3.06863 -0.592476 0.144903 2.20712C0.102551 2.24868 0.0785204 2.30539 0.0781298 2.3647C0.0777393 2.42401 0.101021 2.48103 0.142822 2.52314L0.944892 3.3317C1.02745 3.4148 1.16163 3.41583 1.24547 3.33401C2.35955 2.2758 3.83796 1.68571 5.37512 1.68571ZM5.37747 4.31692C6.22196 4.31686 7.03632 4.63049 7.6623 5.19685C7.74697 5.27723 7.88034 5.27549 7.96287 5.19293L8.76379 4.38437C8.80597 4.34196 8.82937 4.28443 8.82876 4.22464C8.82815 4.16486 8.80358 4.10781 8.76055 4.06626C6.85431 2.29457 3.90225 2.29457 1.99601 4.06626C1.95295 4.10781 1.92838 4.16488 1.92782 4.22469C1.92725 4.28449 1.95074 4.34202 1.99301 4.38437L2.79369 5.19293C2.87622 5.27549 3.0096 5.27723 3.09426 5.19685C3.71983 4.63086 4.53354 4.31726 5.37747 4.31692ZM6.97956 6.08618C6.98079 6.14613 6.9572 6.20393 6.91436 6.24593L5.52895 7.64288C5.48833 7.68394 5.43296 7.70704 5.37519 7.70704C5.31742 7.70704 5.26205 7.68394 5.22144 7.64288L3.83579 6.24593C3.79298 6.2039 3.76944 6.14608 3.7707 6.08613C3.77197 6.02617 3.79795 5.9694 3.84249 5.92921C4.72727 5.18149 6.02311 5.18149 6.90789 5.92921C6.9524 5.96943 6.97833 6.02622 6.97956 6.08618Z"
+											fill="black" />
+									</svg>
+									<svg width="17" height="8" viewBox="0 0 17 8" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<rect opacity="0.35" x="0.470472" y="0.454847" width="14.5083" height="7.139"
+											rx="1.49704" stroke="black" stroke-width="0.690943" />
+										<path opacity="0.4"
+											d="M16.0156 2.64258V5.40609C16.5716 5.17203 16.9331 4.62756 16.9331 4.02433C16.9331 3.4211 16.5716 2.87663 16.0156 2.64258Z"
+											fill="black" />
+										<rect x="1.50781" y="1.49121" width="12.4358" height="5.06643" rx="0.921258"
+											fill="black" />
+									</svg>
+								</div>
+							</div>
+							<div class="header">
+								<div>
+									<h5>Your balance</h5>
+									<a href="#">
+										<svg width="18" height="17" viewBox="0 0 18 17" fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M8.81482 10.7136C9.9595 10.7136 10.8875 9.78567 10.8875 8.64099C10.8875 7.49631 9.9595 6.56836 8.81482 6.56836C7.67014 6.56836 6.74219 7.49631 6.74219 8.64099C6.74219 9.78567 7.67014 10.7136 8.81482 10.7136Z"
+												class="stroke-primary" stroke-width="1.38175" stroke-linecap="round"
+												stroke-linejoin="round" />
+											<path
+												d="M13.927 10.7133C13.835 10.9217 13.8076 11.1528 13.8482 11.3769C13.8889 11.6011 13.9957 11.8079 14.155 11.9707L14.1964 12.0121C14.3249 12.1405 14.4268 12.2929 14.4963 12.4606C14.5659 12.6283 14.6017 12.8081 14.6017 12.9897C14.6017 13.1713 14.5659 13.3511 14.4963 13.5189C14.4268 13.6866 14.3249 13.839 14.1964 13.9673C14.0681 14.0958 13.9157 14.1977 13.748 14.2672C13.5802 14.3368 13.4004 14.3726 13.2188 14.3726C13.0372 14.3726 12.8574 14.3368 12.6897 14.2672C12.522 14.1977 12.3696 14.0958 12.2412 13.9673L12.1998 13.9259C12.037 13.7666 11.8302 13.6598 11.606 13.6191C11.3819 13.5785 11.1508 13.6059 10.9424 13.6979C10.7381 13.7855 10.5638 13.9309 10.441 14.1162C10.3183 14.3016 10.2524 14.5188 10.2515 14.7411V14.8586C10.2515 15.225 10.1059 15.5765 9.84681 15.8356C9.58768 16.0947 9.23623 16.2403 8.86976 16.2403C8.5033 16.2403 8.15184 16.0947 7.89271 15.8356C7.63358 15.5765 7.48801 15.225 7.48801 14.8586V14.7964C7.48266 14.5677 7.40864 14.3459 7.27557 14.1599C7.1425 13.9738 6.95654 13.8321 6.74186 13.7532C6.53348 13.6612 6.30233 13.6338 6.07821 13.6744C5.85409 13.715 5.64729 13.8219 5.48446 13.9811L5.44301 14.0226C5.31468 14.1511 5.16229 14.253 4.99455 14.3225C4.82681 14.3921 4.647 14.4278 4.46542 14.4278C4.28384 14.4278 4.10403 14.3921 3.93629 14.3225C3.76855 14.253 3.61616 14.1511 3.48783 14.0226C3.35936 13.8943 3.25744 13.7419 3.18791 13.5741C3.11837 13.4064 3.08258 13.2266 3.08258 13.045C3.08258 12.8634 3.11837 12.6836 3.18791 12.5159C3.25744 12.3481 3.35936 12.1957 3.48783 12.0674L3.52928 12.026C3.68855 11.8631 3.7954 11.6563 3.83603 11.4322C3.87667 11.2081 3.84924 10.9769 3.75727 10.7686C3.66969 10.5642 3.52428 10.39 3.33892 10.2672C3.15357 10.1444 2.93636 10.0786 2.71405 10.0777H2.5966C2.23013 10.0777 1.87868 9.93211 1.61955 9.67298C1.36042 9.41385 1.21484 9.0624 1.21484 8.69593C1.21484 8.32947 1.36042 7.97801 1.61955 7.71889C1.87868 7.45976 2.23013 7.31418 2.5966 7.31418H2.65878C2.88745 7.30883 3.10923 7.23481 3.29528 7.10174C3.48133 6.96867 3.62304 6.78271 3.702 6.56803C3.79397 6.35965 3.8214 6.1285 3.78076 5.90438C3.74013 5.68027 3.63328 5.47346 3.47401 5.31064L3.43256 5.26918C3.30409 5.14086 3.20217 4.98846 3.13264 4.82072C3.0631 4.65298 3.02731 4.47318 3.02731 4.29159C3.02731 4.11001 3.0631 3.9302 3.13264 3.76246C3.20217 3.59472 3.30409 3.44233 3.43256 3.314C3.56089 3.18553 3.71328 3.08361 3.88102 3.01408C4.04876 2.94454 4.22857 2.90875 4.41015 2.90875C4.59173 2.90875 4.77154 2.94454 4.93928 3.01408C5.10702 3.08361 5.25941 3.18553 5.38774 3.314L5.42919 3.35545C5.59202 3.51473 5.79882 3.62157 6.02294 3.66221C6.24706 3.70284 6.47821 3.67541 6.68659 3.58344H6.74186C6.9462 3.49587 7.12047 3.35045 7.24322 3.16509C7.36598 2.97974 7.43185 2.76253 7.43274 2.54022V2.42277C7.43274 2.05631 7.57831 1.70485 7.83744 1.44572C8.09657 1.18659 8.44803 1.04102 8.81449 1.04102C9.18095 1.04102 9.53241 1.18659 9.79154 1.44572C10.0507 1.70485 10.1962 2.05631 10.1962 2.42277V2.48495C10.1971 2.70726 10.263 2.92447 10.3858 3.10982C10.5085 3.29518 10.6828 3.4406 10.8871 3.52817C11.0955 3.62014 11.3267 3.64757 11.5508 3.60694C11.7749 3.5663 11.9817 3.45946 12.1445 3.30018L12.186 3.25873C12.3143 3.13026 12.4667 3.02834 12.6344 2.95881C12.8022 2.88927 12.982 2.85348 13.1636 2.85348C13.3451 2.85348 13.5249 2.88927 13.6927 2.95881C13.8604 3.02834 14.0128 3.13026 14.1412 3.25873C14.2696 3.38706 14.3715 3.53945 14.4411 3.70719C14.5106 3.87493 14.5464 4.05474 14.5464 4.23632C14.5464 4.41791 14.5106 4.59771 14.4411 4.76545C14.3715 4.93319 14.2696 5.08559 14.1412 5.21391L14.0997 5.25537C13.9404 5.41819 13.8336 5.625 13.7929 5.84911C13.7523 6.07323 13.7797 6.30438 13.8717 6.51276V6.56803C13.9593 6.77237 14.1047 6.94664 14.2901 7.0694C14.4754 7.19215 14.6926 7.25802 14.9149 7.25891H15.0324C15.3988 7.25891 15.7503 7.40449 16.0094 7.66362C16.2686 7.92274 16.4141 8.2742 16.4141 8.64066C16.4141 9.00713 16.2686 9.35858 16.0094 9.61771C15.7503 9.87684 15.3988 10.0224 15.0324 10.0224H14.9702C14.7479 10.0233 14.5307 10.0892 14.3453 10.2119C14.16 10.3347 14.0146 10.509 13.927 10.7133V10.7133Z"
+												class="stroke-primary" stroke-width="1.38175" stroke-linecap="round"
+												stroke-linejoin="round" />
+										</svg>
+									</a>
+								</div>
+								<h3>€ <span>2.347,81</span></h3>
+							</div>
+							<div class="chart">
+								<canvas id="myChart"></canvas>
+							</div>
+							<div class="transaction">
+								<h4>Latest transactions</h4>
+								<div class="trans-item">
+									<div>
+										<div><img src="../assets/img/photos/pingo-doce.png" alt="">
+										</div>
+										<div>
+											<span class="title">Pingo Doce</span>
+											<span class="date">Feb 4 | 09:24</span>
+										</div>
+									</div>
+									<span class="amount"><span>-93,20</span> €</span>
+								</div>
+								<div class="trans-item">
+									<div>
+										<div><img src="../assets/img/photos/burger-king.png" alt="">
+										</div>
+										<div>
+											<span class="title">Burger King</span>
+											<span class="date">Feb 4 | 09:24</span>
+										</div>
+									</div>
+									<span class="amount"><span>-18,00</span> €</span>
+								</div>
+								<div class="trans-item">
+									<div>
+										<div><img src="../assets/img/photos/mc.png" alt="">
+										</div>
+										<div>
+											<span class="title">McDonald’s</span>
+											<span class="date">Jan 24 | 20:28</span>
+										</div>
+									</div>
+									<span class="amount"><span>-25,00</span> €</span>
+								</div>
+								<div class="trans-item">
+									<div>
+										<div><img src="../assets/img/photos/mc.png" alt="">
+										</div>
+										<div>
+											<span class="title">McDonald’s</span>
+											<span class="date">Jan 13 at 21:13</span>
+										</div>
+									</div>
+									<span class="amount"><span>-17,40</span> €</span>
+								</div>
+							</div>
+							<div class="menu">
+								<ul>
+									<li class="active">
+										<a href="">
+											<svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M2.63672 7.14669L8.85461 2.31055L15.0725 7.14669V14.7463C15.0725 15.1128 14.9269 15.4643 14.6678 15.7234C14.4087 15.9825 14.0572 16.1281 13.6908 16.1281H4.01847C3.65201 16.1281 3.30055 15.9825 3.04143 15.7234C2.7823 15.4643 2.63672 15.1128 2.63672 14.7463V7.14669Z"
+													stroke="#02D871" stroke-width="1.38175" stroke-linecap="round"
+													stroke-linejoin="round" />
+												<path d="M6.78125 16.1275V9.21875H10.9265V16.1275" stroke="#02D871"
+													stroke-width="1.38175" stroke-linecap="round"
+													stroke-linejoin="round" />
+											</svg>
+											home
+										</a>
+									</li>
+									<li>
+										<a href="">
+											<svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<g clip-path="url(#clip0)">
+													<path
+														d="M1.67969 5.07406V16.1281L6.51583 13.3646L12.0428 16.1281L16.879 13.3646V2.31055L12.0428 5.07406L6.51583 2.31055L1.67969 5.07406Z"
+														stroke="#8C9C95" stroke-width="1.38175" stroke-linecap="round"
+														stroke-linejoin="round" />
+													<path d="M6.51562 2.31055V13.3646" stroke="#8C9C95"
+														stroke-width="1.38175" stroke-linecap="round"
+														stroke-linejoin="round" />
+													<path d="M12.043 5.07324V16.1273" stroke="#8C9C95"
+														stroke-width="1.38175" stroke-linecap="round"
+														stroke-linejoin="round" />
+												</g>
+												<defs>
+													<clipPath id="clip0">
+														<rect x="0.992188" y="0.927734" width="16.5811" height="16.5811"
+															fill="white" />
+													</clipPath>
+												</defs>
+											</svg>
+											Sellers network
+										</a>
+									</li>
+									<li class="payment">
+										<a href="">€</a>
+									</li>
+									<li>
+										<a href="">
+											<svg width="18" height="19" viewBox="0 0 18 19" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<g clip-path="url(#clip0)">
+													<path
+														d="M4.37222 17.4857C4.60799 17.4857 4.79913 17.2945 4.79913 17.0587C4.79913 16.823 4.60799 16.6318 4.37222 16.6318C4.13645 16.6318 3.94531 16.823 3.94531 17.0587C3.94531 17.2945 4.13645 17.4857 4.37222 17.4857Z"
+														stroke="#8C9C95" stroke-width="1.18176" stroke-linecap="round"
+														stroke-linejoin="round" />
+													<path
+														d="M9.06753 17.4857C9.30331 17.4857 9.49444 17.2945 9.49444 17.0587C9.49444 16.823 9.30331 16.6318 9.06753 16.6318C8.83176 16.6318 8.64062 16.823 8.64062 17.0587C8.64062 17.2945 8.83176 17.4857 9.06753 17.4857Z"
+														stroke="#8C9C95" stroke-width="1.18176" stroke-linecap="round"
+														stroke-linejoin="round" />
+													<path
+														d="M0.953125 8.52051H2.66076L3.80487 14.2368C3.84391 14.4333 3.95083 14.6099 4.10692 14.7356C4.26302 14.8612 4.45833 14.928 4.65868 14.9241H8.80822C9.00857 14.928 9.20389 14.8612 9.35998 14.7356C9.51608 14.6099 9.623 14.4333 9.66204 14.2368L10.3451 10.655H3.08766"
+														stroke="#8C9C95" stroke-width="1.38175" stroke-linecap="round"
+														stroke-linejoin="round" />
+													<path
+														d="M4.64844 7.56237C4.64844 7.56237 4.64846 3.60312 4.64844 2.96539C4.64841 2.32766 4.64844 2.00879 5.28617 2.00879C5.9239 2.00879 12.939 2.00879 12.939 2.00879M11.9293 17.2612H14.6928C16.42 17.2346 16.42 17.0904 16.42 15.5075C16.42 13.9245 16.4465 5.56946 16.4465 5.56946M12.939 2.00879L16.4465 5.56946M12.939 2.00879C12.939 2.00879 12.939 4.294 12.939 4.93173C12.939 5.56946 12.939 5.56946 13.5767 5.56946C14.2144 5.56946 16.4465 5.56946 16.4465 5.56946"
+														stroke="#8C9C95" stroke-width="1.38175" />
+												</g>
+												<defs>
+													<clipPath id="clip0">
+														<rect x="0.183594" y="0.308594" width="17.2719" height="17.9628"
+															fill="white" />
+													</clipPath>
+												</defs>
+											</svg>
+											Orders
+										</a>
+									</li>
+									<li>
+										<a href="">
+											<svg width="18" height="17" viewBox="0 0 18 17" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<g clip-path="url(#clip0)">
+													<path d="M8.96094 1.64062L12.9115 2.92527L11.6268 6.8758"
+														stroke="#8C9C95" stroke-width="1.38175" stroke-linecap="round"
+														stroke-linejoin="round" />
+													<path d="M8.85547 15.6543L4.90499 14.3695L6.18953 10.419"
+														stroke="#8C9C95" stroke-width="1.38175" stroke-linecap="round"
+														stroke-linejoin="round" />
+													<path d="M2.44242 8.25849L12.9128 2.92672" stroke="#8C9C95"
+														stroke-width="1.38175" stroke-linecap="round"
+														stroke-linejoin="round" />
+													<path d="M15.3738 9.03831L4.9037 14.3699" stroke="#8C9C95"
+														stroke-width="1.38175" stroke-linecap="round"
+														stroke-linejoin="round" />
+												</g>
+												<defs>
+													<clipPath id="clip0">
+														<rect x="0.785156" y="0.357422" width="16.581" height="16.5827"
+															fill="white" />
+													</clipPath>
+												</defs>
+											</svg>
+											Transactions
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-12 iphone-container">
+					<div class="iphone">
+						<img src="../assets/img/illustrations/phone.png" class="bg-img" alt="">
+						<div class="content review bg-green">
+							<div class="iphone-bar">
+								<span class="time">9:41</span>
+								<div class="icons">
+									<svg width="13" height="8" viewBox="0 0 13 8" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd"
+											d="M11.933 0.339844H11.2422C10.8606 0.339844 10.5513 0.64916 10.5513 1.03072V7.01832C10.5513 7.39988 10.8606 7.7092 11.2422 7.7092H11.933C12.3146 7.7092 12.6239 7.39988 12.6239 7.01832V1.03072C12.6239 0.64916 12.3146 0.339844 11.933 0.339844ZM8.01804 1.95191H8.70891C9.09047 1.95191 9.39979 2.26122 9.39979 2.64278V7.01834C9.39979 7.3999 9.09047 7.70922 8.70891 7.70922H8.01804C7.63647 7.70922 7.32716 7.3999 7.32716 7.01834V2.64278C7.32716 2.26122 7.63647 1.95191 8.01804 1.95191ZM5.48821 3.56397H4.79733C4.41577 3.56397 4.10645 3.87329 4.10645 4.25485V7.01836C4.10645 7.39992 4.41577 7.70923 4.79733 7.70923H5.48821C5.86977 7.70923 6.17908 7.39992 6.17908 7.01836V4.25485C6.17908 3.87329 5.86977 3.56397 5.48821 3.56397ZM2.26066 4.9461H1.56978C1.18822 4.9461 0.878906 5.25542 0.878906 5.63698V7.01874C0.878906 7.4003 1.18822 7.70961 1.56978 7.70961H2.26066C2.64222 7.70961 2.95154 7.4003 2.95154 7.01874V5.63698C2.95154 5.25542 2.64222 4.9461 2.26066 4.9461Z"
+											fill="white" />
+									</svg>
+									<svg width="11" height="8" viewBox="0 0 11 8" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd"
+											d="M5.37512 1.68571C6.91214 1.68578 8.39038 2.27587 9.50432 3.33401C9.5882 3.4157 9.72227 3.41467 9.80489 3.3317L10.6067 2.52314C10.6486 2.48106 10.6719 2.42406 10.6715 2.36475C10.6712 2.30543 10.6472 2.24871 10.6049 2.20712C7.68115 -0.592476 3.06863 -0.592476 0.144903 2.20712C0.102551 2.24868 0.0785204 2.30539 0.0781298 2.3647C0.0777393 2.42401 0.101021 2.48103 0.142822 2.52314L0.944892 3.3317C1.02745 3.4148 1.16163 3.41583 1.24547 3.33401C2.35955 2.2758 3.83796 1.68571 5.37512 1.68571ZM5.37747 4.31692C6.22196 4.31686 7.03632 4.63049 7.6623 5.19685C7.74697 5.27723 7.88034 5.27549 7.96287 5.19293L8.76379 4.38437C8.80597 4.34196 8.82937 4.28443 8.82876 4.22464C8.82815 4.16486 8.80358 4.10781 8.76055 4.06626C6.85431 2.29457 3.90225 2.29457 1.99601 4.06626C1.95295 4.10781 1.92838 4.16488 1.92782 4.22469C1.92725 4.28449 1.95074 4.34202 1.99301 4.38437L2.79369 5.19293C2.87622 5.27549 3.0096 5.27723 3.09426 5.19685C3.71983 4.63086 4.53354 4.31726 5.37747 4.31692ZM6.97956 6.08618C6.98079 6.14613 6.9572 6.20393 6.91436 6.24593L5.52895 7.64288C5.48833 7.68394 5.43296 7.70704 5.37519 7.70704C5.31742 7.70704 5.26205 7.68394 5.22144 7.64288L3.83579 6.24593C3.79298 6.2039 3.76944 6.14608 3.7707 6.08613C3.77197 6.02617 3.79795 5.9694 3.84249 5.92921C4.72727 5.18149 6.02311 5.18149 6.90789 5.92921C6.9524 5.96943 6.97833 6.02622 6.97956 6.08618Z"
+											fill="white" />
+									</svg>
+									<svg width="17" height="8" viewBox="0 0 17 8" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<rect opacity="0.35" x="0.470472" y="0.454847" width="14.5083" height="7.139"
+											rx="1.49704" stroke="white" stroke-width="0.690943" />
+										<path opacity="0.4"
+											d="M16.0156 2.64258V5.40609C16.5716 5.17203 16.9331 4.62756 16.9331 4.02433C16.9331 3.4211 16.5716 2.87663 16.0156 2.64258Z"
+											fill="white" />
+										<rect x="1.50781" y="1.49121" width="12.4358" height="5.06643" rx="0.921258"
+											fill="white" />
+									</svg>
+								</div>
+							</div>
+							<div class="header">
+								<a href="#" class="go-back">
+									<img src="../assets/img/icons/arrow-left2.svg" alt="Arrow Left">
+									<h5>Confirm payment</h5>
+									<div></div>
+								</a>
+							</div>
+							<div class="payment">
+								<p>You’re about to pay</p>
+								<h3>€ 51,60</h3>
+								<br>
+								<div class="logo">Logo</div>
+								<p>Tasca da Vila</p>
+								<button>Make payment</button>
+							</div>
+							<a href="#" class="cancel">Cancel payment</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-12 iphone-container">
+					<div class="iphone">
+						<img src="../assets/img/illustrations/phone.png" class="bg-img" alt="">
+						<div class="content struct bg-green">
+							<div class="iphone-bar">
+								<span class="time">9:41</span>
+								<div class="icons">
+									<svg width="13" height="8" viewBox="0 0 13 8" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd"
+											d="M11.933 0.339844H11.2422C10.8606 0.339844 10.5513 0.64916 10.5513 1.03072V7.01832C10.5513 7.39988 10.8606 7.7092 11.2422 7.7092H11.933C12.3146 7.7092 12.6239 7.39988 12.6239 7.01832V1.03072C12.6239 0.64916 12.3146 0.339844 11.933 0.339844ZM8.01804 1.95191H8.70891C9.09047 1.95191 9.39979 2.26122 9.39979 2.64278V7.01834C9.39979 7.3999 9.09047 7.70922 8.70891 7.70922H8.01804C7.63647 7.70922 7.32716 7.3999 7.32716 7.01834V2.64278C7.32716 2.26122 7.63647 1.95191 8.01804 1.95191ZM5.48821 3.56397H4.79733C4.41577 3.56397 4.10645 3.87329 4.10645 4.25485V7.01836C4.10645 7.39992 4.41577 7.70923 4.79733 7.70923H5.48821C5.86977 7.70923 6.17908 7.39992 6.17908 7.01836V4.25485C6.17908 3.87329 5.86977 3.56397 5.48821 3.56397ZM2.26066 4.9461H1.56978C1.18822 4.9461 0.878906 5.25542 0.878906 5.63698V7.01874C0.878906 7.4003 1.18822 7.70961 1.56978 7.70961H2.26066C2.64222 7.70961 2.95154 7.4003 2.95154 7.01874V5.63698C2.95154 5.25542 2.64222 4.9461 2.26066 4.9461Z"
+											fill="white" />
+									</svg>
+									<svg width="11" height="8" viewBox="0 0 11 8" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd"
+											d="M5.37512 1.68571C6.91214 1.68578 8.39038 2.27587 9.50432 3.33401C9.5882 3.4157 9.72227 3.41467 9.80489 3.3317L10.6067 2.52314C10.6486 2.48106 10.6719 2.42406 10.6715 2.36475C10.6712 2.30543 10.6472 2.24871 10.6049 2.20712C7.68115 -0.592476 3.06863 -0.592476 0.144903 2.20712C0.102551 2.24868 0.0785204 2.30539 0.0781298 2.3647C0.0777393 2.42401 0.101021 2.48103 0.142822 2.52314L0.944892 3.3317C1.02745 3.4148 1.16163 3.41583 1.24547 3.33401C2.35955 2.2758 3.83796 1.68571 5.37512 1.68571ZM5.37747 4.31692C6.22196 4.31686 7.03632 4.63049 7.6623 5.19685C7.74697 5.27723 7.88034 5.27549 7.96287 5.19293L8.76379 4.38437C8.80597 4.34196 8.82937 4.28443 8.82876 4.22464C8.82815 4.16486 8.80358 4.10781 8.76055 4.06626C6.85431 2.29457 3.90225 2.29457 1.99601 4.06626C1.95295 4.10781 1.92838 4.16488 1.92782 4.22469C1.92725 4.28449 1.95074 4.34202 1.99301 4.38437L2.79369 5.19293C2.87622 5.27549 3.0096 5.27723 3.09426 5.19685C3.71983 4.63086 4.53354 4.31726 5.37747 4.31692ZM6.97956 6.08618C6.98079 6.14613 6.9572 6.20393 6.91436 6.24593L5.52895 7.64288C5.48833 7.68394 5.43296 7.70704 5.37519 7.70704C5.31742 7.70704 5.26205 7.68394 5.22144 7.64288L3.83579 6.24593C3.79298 6.2039 3.76944 6.14608 3.7707 6.08613C3.77197 6.02617 3.79795 5.9694 3.84249 5.92921C4.72727 5.18149 6.02311 5.18149 6.90789 5.92921C6.9524 5.96943 6.97833 6.02622 6.97956 6.08618Z"
+											fill="white" />
+									</svg>
+									<svg width="17" height="8" viewBox="0 0 17 8" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<rect opacity="0.35" x="0.470472" y="0.454847" width="14.5083" height="7.139"
+											rx="1.49704" stroke="white" stroke-width="0.690943" />
+										<path opacity="0.4"
+											d="M16.0156 2.64258V5.40609C16.5716 5.17203 16.9331 4.62756 16.9331 4.02433C16.9331 3.4211 16.5716 2.87663 16.0156 2.64258Z"
+											fill="white" />
+										<rect x="1.50781" y="1.49121" width="12.4358" height="5.06643" rx="0.921258"
+											fill="white" />
+									</svg>
+								</div>
+							</div>
+							<div class="content">
+								<h3>Payment complete!</h3>
+								<p>Your payment was completed successfully!</p>
+								<svg width="107" height="91" viewBox="0 0 107 91" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path d="M102.002 5.21777L47.9673 59.4286L23.4062 34.7873" stroke="white"
+										stroke-width="8.46651" stroke-linecap="round" stroke-linejoin="round" />
+									<path fill-rule="evenodd" clip-rule="evenodd"
+										d="M59.0054 3.29041C54.5536 1.80455 49.7918 1 44.8428 1C20.0768 1 0 21.1472 0 46C0 70.8528 20.0768 91 44.8428 91C69.6087 91 89.6855 70.8528 89.6855 46C89.6855 38.1351 87.6749 30.7415 84.1413 24.3085L78.1802 31.3566C80.1342 35.8377 81.219 40.79 81.219 46C81.219 66.2049 64.9049 82.5335 44.8428 82.5335C24.7806 82.5335 8.46651 66.2049 8.46651 46C8.46651 25.7951 24.7806 9.46651 44.8428 9.46651C48.4937 9.46651 52.0206 10.0073 55.3476 11.0138L59.0054 3.29041Z"
+										fill="white" />
+								</svg>
+								<button>Done</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-12 iphone-container">
+					<div class="iphone">
+						<img src="../assets/img/illustrations/phone.png" class="bg-img" alt="">
+						<div class="content struct">
+							<div class="iphone-bar">
+								<span class="time">9:41</span>
+								<div class="icons">
+									<svg width="13" height="8" viewBox="0 0 13 8" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd"
+											d="M11.933 0.339844H11.2422C10.8606 0.339844 10.5513 0.64916 10.5513 1.03072V7.01832C10.5513 7.39988 10.8606 7.7092 11.2422 7.7092H11.933C12.3146 7.7092 12.6239 7.39988 12.6239 7.01832V1.03072C12.6239 0.64916 12.3146 0.339844 11.933 0.339844ZM8.01804 1.95191H8.70891C9.09047 1.95191 9.39979 2.26122 9.39979 2.64278V7.01834C9.39979 7.3999 9.09047 7.70922 8.70891 7.70922H8.01804C7.63647 7.70922 7.32716 7.3999 7.32716 7.01834V2.64278C7.32716 2.26122 7.63647 1.95191 8.01804 1.95191ZM5.48821 3.56397H4.79733C4.41577 3.56397 4.10645 3.87329 4.10645 4.25485V7.01836C4.10645 7.39992 4.41577 7.70923 4.79733 7.70923H5.48821C5.86977 7.70923 6.17908 7.39992 6.17908 7.01836V4.25485C6.17908 3.87329 5.86977 3.56397 5.48821 3.56397ZM2.26066 4.9461H1.56978C1.18822 4.9461 0.878906 5.25542 0.878906 5.63698V7.01874C0.878906 7.4003 1.18822 7.70961 1.56978 7.70961H2.26066C2.64222 7.70961 2.95154 7.4003 2.95154 7.01874V5.63698C2.95154 5.25542 2.64222 4.9461 2.26066 4.9461Z"
+											fill="white" />
+									</svg>
+									<svg width="11" height="8" viewBox="0 0 11 8" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd"
+											d="M5.37512 1.68571C6.91214 1.68578 8.39038 2.27587 9.50432 3.33401C9.5882 3.4157 9.72227 3.41467 9.80489 3.3317L10.6067 2.52314C10.6486 2.48106 10.6719 2.42406 10.6715 2.36475C10.6712 2.30543 10.6472 2.24871 10.6049 2.20712C7.68115 -0.592476 3.06863 -0.592476 0.144903 2.20712C0.102551 2.24868 0.0785204 2.30539 0.0781298 2.3647C0.0777393 2.42401 0.101021 2.48103 0.142822 2.52314L0.944892 3.3317C1.02745 3.4148 1.16163 3.41583 1.24547 3.33401C2.35955 2.2758 3.83796 1.68571 5.37512 1.68571ZM5.37747 4.31692C6.22196 4.31686 7.03632 4.63049 7.6623 5.19685C7.74697 5.27723 7.88034 5.27549 7.96287 5.19293L8.76379 4.38437C8.80597 4.34196 8.82937 4.28443 8.82876 4.22464C8.82815 4.16486 8.80358 4.10781 8.76055 4.06626C6.85431 2.29457 3.90225 2.29457 1.99601 4.06626C1.95295 4.10781 1.92838 4.16488 1.92782 4.22469C1.92725 4.28449 1.95074 4.34202 1.99301 4.38437L2.79369 5.19293C2.87622 5.27549 3.0096 5.27723 3.09426 5.19685C3.71983 4.63086 4.53354 4.31726 5.37747 4.31692ZM6.97956 6.08618C6.98079 6.14613 6.9572 6.20393 6.91436 6.24593L5.52895 7.64288C5.48833 7.68394 5.43296 7.70704 5.37519 7.70704C5.31742 7.70704 5.26205 7.68394 5.22144 7.64288L3.83579 6.24593C3.79298 6.2039 3.76944 6.14608 3.7707 6.08613C3.77197 6.02617 3.79795 5.9694 3.84249 5.92921C4.72727 5.18149 6.02311 5.18149 6.90789 5.92921C6.9524 5.96943 6.97833 6.02622 6.97956 6.08618Z"
+											fill="white" />
+									</svg>
+									<svg width="17" height="8" viewBox="0 0 17 8" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<rect opacity="0.35" x="0.470472" y="0.454847" width="14.5083" height="7.139"
+											rx="1.49704" stroke="white" stroke-width="0.690943" />
+										<path opacity="0.4"
+											d="M16.0156 2.64258V5.40609C16.5716 5.17203 16.9331 4.62756 16.9331 4.02433C16.9331 3.4211 16.5716 2.87663 16.0156 2.64258Z"
+											fill="white" />
+										<rect x="1.50781" y="1.49121" width="12.4358" height="5.06643" rx="0.921258"
+											fill="white" />
+									</svg>
+								</div>
+							</div>
+							<div class="content">
+								<h3>Payment rejected</h3>
+								<p>This payment was rejected by you.</p>
+								<svg width="127" height="127" viewBox="0 0 127 127" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path d="M83.3843 43.6182L44.5234 82.4791" class="stroke-failed"
+										stroke-width="8.13368" stroke-linecap="round" stroke-linejoin="round" />
+									<path d="M44.5241 43.6182L92.7617 91.8558" class="stroke-failed"
+										stroke-width="8.13368" stroke-linecap="round" stroke-linejoin="round" />
+									<path
+										d="M92.8828 91.6185C85.829 98.9891 76.2626 103.439 66.0811 104.087C55.8995 104.734 45.8466 101.53 37.9164 95.1122C29.9862 88.6939 24.7579 79.5295 23.2686 69.4367C21.7793 59.3439 24.1379 49.06 29.8763 40.6248C35.6148 32.1896 44.3141 26.2194 54.2486 23.8982C64.1831 21.5771 74.6272 23.0746 83.5092 28.0938C92.3913 33.113 99.0624 41.2872 102.199 50.995C103.846 56.0912 104.456 61.4147 104.047 66.6631"
+										class="stroke-failed" stroke-width="8.13368" />
+								</svg>
+								<button>Done</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-12 iphone-container">
+					<div class="iphone">
+						<img src="../assets/img/illustrations/phone.png" class="bg-img" alt="">
+						<div class="content struct">
+							<div class="iphone-bar">
+								<span class="time">9:41</span>
+								<div class="icons">
+									<svg width="13" height="8" viewBox="0 0 13 8" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd"
+											d="M11.933 0.339844H11.2422C10.8606 0.339844 10.5513 0.64916 10.5513 1.03072V7.01832C10.5513 7.39988 10.8606 7.7092 11.2422 7.7092H11.933C12.3146 7.7092 12.6239 7.39988 12.6239 7.01832V1.03072C12.6239 0.64916 12.3146 0.339844 11.933 0.339844ZM8.01804 1.95191H8.70891C9.09047 1.95191 9.39979 2.26122 9.39979 2.64278V7.01834C9.39979 7.3999 9.09047 7.70922 8.70891 7.70922H8.01804C7.63647 7.70922 7.32716 7.3999 7.32716 7.01834V2.64278C7.32716 2.26122 7.63647 1.95191 8.01804 1.95191ZM5.48821 3.56397H4.79733C4.41577 3.56397 4.10645 3.87329 4.10645 4.25485V7.01836C4.10645 7.39992 4.41577 7.70923 4.79733 7.70923H5.48821C5.86977 7.70923 6.17908 7.39992 6.17908 7.01836V4.25485C6.17908 3.87329 5.86977 3.56397 5.48821 3.56397ZM2.26066 4.9461H1.56978C1.18822 4.9461 0.878906 5.25542 0.878906 5.63698V7.01874C0.878906 7.4003 1.18822 7.70961 1.56978 7.70961H2.26066C2.64222 7.70961 2.95154 7.4003 2.95154 7.01874V5.63698C2.95154 5.25542 2.64222 4.9461 2.26066 4.9461Z"
+											fill="white" />
+									</svg>
+									<svg width="11" height="8" viewBox="0 0 11 8" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd"
+											d="M5.37512 1.68571C6.91214 1.68578 8.39038 2.27587 9.50432 3.33401C9.5882 3.4157 9.72227 3.41467 9.80489 3.3317L10.6067 2.52314C10.6486 2.48106 10.6719 2.42406 10.6715 2.36475C10.6712 2.30543 10.6472 2.24871 10.6049 2.20712C7.68115 -0.592476 3.06863 -0.592476 0.144903 2.20712C0.102551 2.24868 0.0785204 2.30539 0.0781298 2.3647C0.0777393 2.42401 0.101021 2.48103 0.142822 2.52314L0.944892 3.3317C1.02745 3.4148 1.16163 3.41583 1.24547 3.33401C2.35955 2.2758 3.83796 1.68571 5.37512 1.68571ZM5.37747 4.31692C6.22196 4.31686 7.03632 4.63049 7.6623 5.19685C7.74697 5.27723 7.88034 5.27549 7.96287 5.19293L8.76379 4.38437C8.80597 4.34196 8.82937 4.28443 8.82876 4.22464C8.82815 4.16486 8.80358 4.10781 8.76055 4.06626C6.85431 2.29457 3.90225 2.29457 1.99601 4.06626C1.95295 4.10781 1.92838 4.16488 1.92782 4.22469C1.92725 4.28449 1.95074 4.34202 1.99301 4.38437L2.79369 5.19293C2.87622 5.27549 3.0096 5.27723 3.09426 5.19685C3.71983 4.63086 4.53354 4.31726 5.37747 4.31692ZM6.97956 6.08618C6.98079 6.14613 6.9572 6.20393 6.91436 6.24593L5.52895 7.64288C5.48833 7.68394 5.43296 7.70704 5.37519 7.70704C5.31742 7.70704 5.26205 7.68394 5.22144 7.64288L3.83579 6.24593C3.79298 6.2039 3.76944 6.14608 3.7707 6.08613C3.77197 6.02617 3.79795 5.9694 3.84249 5.92921C4.72727 5.18149 6.02311 5.18149 6.90789 5.92921C6.9524 5.96943 6.97833 6.02622 6.97956 6.08618Z"
+											fill="white" />
+									</svg>
+									<svg width="17" height="8" viewBox="0 0 17 8" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<rect opacity="0.35" x="0.470472" y="0.454847" width="14.5083" height="7.139"
+											rx="1.49704" stroke="white" stroke-width="0.690943" />
+										<path opacity="0.4"
+											d="M16.0156 2.64258V5.40609C16.5716 5.17203 16.9331 4.62756 16.9331 4.02433C16.9331 3.4211 16.5716 2.87663 16.0156 2.64258Z"
+											fill="white" />
+										<rect x="1.50781" y="1.49121" width="12.4358" height="5.06643" rx="0.921258"
+											fill="white" />
+									</svg>
+								</div>
+							</div>
+							<div class="content">
+								<h3>Payment canceled</h3>
+								<p>This payment was canceled by the seller.</p>
+								<svg width="127" height="127" viewBox="0 0 127 127" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path d="M83.3843 43.6182L44.5234 82.4791" class="stroke-failed"
+										stroke-width="8.13368" stroke-linecap="round" stroke-linejoin="round" />
+									<path d="M44.5241 43.6182L92.7617 91.8558" class="stroke-failed"
+										stroke-width="8.13368" stroke-linecap="round" stroke-linejoin="round" />
+									<path
+										d="M92.8828 91.6185C85.829 98.9891 76.2626 103.439 66.0811 104.087C55.8995 104.734 45.8466 101.53 37.9164 95.1122C29.9862 88.6939 24.7579 79.5295 23.2686 69.4367C21.7793 59.3439 24.1379 49.06 29.8763 40.6248C35.6148 32.1896 44.3141 26.2194 54.2486 23.8982C64.1831 21.5771 74.6272 23.0746 83.5092 28.0938C92.3913 33.113 99.0624 41.2872 102.199 50.995C103.846 56.0912 104.456 61.4147 104.047 66.6631"
+										class="stroke-failed" stroke-width="8.13368" />
+								</svg>
+								<button>Done</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-12 iphone-container">
+					<div class="iphone">
+						<img src="../assets/img/illustrations/phone.png" class="bg-img" alt="">
+						<div class="content struct">
+							<div class="iphone-bar">
+								<span class="time">9:41</span>
+								<div class="icons">
+									<svg width="13" height="8" viewBox="0 0 13 8" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd"
+											d="M11.933 0.339844H11.2422C10.8606 0.339844 10.5513 0.64916 10.5513 1.03072V7.01832C10.5513 7.39988 10.8606 7.7092 11.2422 7.7092H11.933C12.3146 7.7092 12.6239 7.39988 12.6239 7.01832V1.03072C12.6239 0.64916 12.3146 0.339844 11.933 0.339844ZM8.01804 1.95191H8.70891C9.09047 1.95191 9.39979 2.26122 9.39979 2.64278V7.01834C9.39979 7.3999 9.09047 7.70922 8.70891 7.70922H8.01804C7.63647 7.70922 7.32716 7.3999 7.32716 7.01834V2.64278C7.32716 2.26122 7.63647 1.95191 8.01804 1.95191ZM5.48821 3.56397H4.79733C4.41577 3.56397 4.10645 3.87329 4.10645 4.25485V7.01836C4.10645 7.39992 4.41577 7.70923 4.79733 7.70923H5.48821C5.86977 7.70923 6.17908 7.39992 6.17908 7.01836V4.25485C6.17908 3.87329 5.86977 3.56397 5.48821 3.56397ZM2.26066 4.9461H1.56978C1.18822 4.9461 0.878906 5.25542 0.878906 5.63698V7.01874C0.878906 7.4003 1.18822 7.70961 1.56978 7.70961H2.26066C2.64222 7.70961 2.95154 7.4003 2.95154 7.01874V5.63698C2.95154 5.25542 2.64222 4.9461 2.26066 4.9461Z"
+											fill="white" />
+									</svg>
+									<svg width="11" height="8" viewBox="0 0 11 8" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd"
+											d="M5.37512 1.68571C6.91214 1.68578 8.39038 2.27587 9.50432 3.33401C9.5882 3.4157 9.72227 3.41467 9.80489 3.3317L10.6067 2.52314C10.6486 2.48106 10.6719 2.42406 10.6715 2.36475C10.6712 2.30543 10.6472 2.24871 10.6049 2.20712C7.68115 -0.592476 3.06863 -0.592476 0.144903 2.20712C0.102551 2.24868 0.0785204 2.30539 0.0781298 2.3647C0.0777393 2.42401 0.101021 2.48103 0.142822 2.52314L0.944892 3.3317C1.02745 3.4148 1.16163 3.41583 1.24547 3.33401C2.35955 2.2758 3.83796 1.68571 5.37512 1.68571ZM5.37747 4.31692C6.22196 4.31686 7.03632 4.63049 7.6623 5.19685C7.74697 5.27723 7.88034 5.27549 7.96287 5.19293L8.76379 4.38437C8.80597 4.34196 8.82937 4.28443 8.82876 4.22464C8.82815 4.16486 8.80358 4.10781 8.76055 4.06626C6.85431 2.29457 3.90225 2.29457 1.99601 4.06626C1.95295 4.10781 1.92838 4.16488 1.92782 4.22469C1.92725 4.28449 1.95074 4.34202 1.99301 4.38437L2.79369 5.19293C2.87622 5.27549 3.0096 5.27723 3.09426 5.19685C3.71983 4.63086 4.53354 4.31726 5.37747 4.31692ZM6.97956 6.08618C6.98079 6.14613 6.9572 6.20393 6.91436 6.24593L5.52895 7.64288C5.48833 7.68394 5.43296 7.70704 5.37519 7.70704C5.31742 7.70704 5.26205 7.68394 5.22144 7.64288L3.83579 6.24593C3.79298 6.2039 3.76944 6.14608 3.7707 6.08613C3.77197 6.02617 3.79795 5.9694 3.84249 5.92921C4.72727 5.18149 6.02311 5.18149 6.90789 5.92921C6.9524 5.96943 6.97833 6.02622 6.97956 6.08618Z"
+											fill="white" />
+									</svg>
+									<svg width="17" height="8" viewBox="0 0 17 8" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<rect opacity="0.35" x="0.470472" y="0.454847" width="14.5083" height="7.139"
+											rx="1.49704" stroke="white" stroke-width="0.690943" />
+										<path opacity="0.4"
+											d="M16.0156 2.64258V5.40609C16.5716 5.17203 16.9331 4.62756 16.9331 4.02433C16.9331 3.4211 16.5716 2.87663 16.0156 2.64258Z"
+											fill="white" />
+										<rect x="1.50781" y="1.49121" width="12.4358" height="5.06643" rx="0.921258"
+											fill="white" />
+									</svg>
+								</div>
+							</div>
+							<div class="content">
+								<h3>Payment expired</h3>
+								<p>This payment request has expired,</p>
+								<svg width="101" height="93" viewBox="0 0 101 93" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M45.3345 85.3477C36.5861 85.3332 28.0796 82.4882 21.0977 77.2418C14.1159 71.9953 9.03731 64.632 6.62786 56.262C4.2184 47.8921 4.60871 38.9695 7.73992 30.8397C10.8711 22.7099 16.5735 15.8138 23.987 11.1913C31.4005 6.56882 40.1233 4.4706 48.8398 5.21305C57.5564 5.9555 65.7941 9.49838 72.3107 15.3074C78.8273 21.1164 83.2695 28.8766 84.9673 37.4177C86.6652 45.9588 85.5266 54.8177 81.7233 62.6585"
+										class="stroke-warning" stroke-width="9.44444" />
+									<path d="M46.8104 22.3828V49.2059L33.7734 56.8483" class="stroke-warning"
+										stroke-width="7.55555" stroke-linecap="round" />
+									<path
+										d="M72.922 54.3547L55.3074 83.761C54.9442 84.3899 54.752 85.103 54.75 85.8292C54.748 86.5555 54.9361 87.2696 55.2958 87.9006C55.6554 88.5315 56.174 89.0573 56.8 89.4256C57.4259 89.794 58.1374 89.992 58.8636 89.9999H94.0929C94.8191 89.992 95.5306 89.794 96.1565 89.4256C96.7825 89.0573 97.301 88.5315 97.6607 87.9006C98.0203 87.2696 98.2085 86.5555 98.2065 85.8292C98.2044 85.103 98.0123 84.3899 97.6491 83.761L80.0344 54.3547C79.6637 53.7435 79.1417 53.2382 78.5188 52.8875C77.8959 52.5368 77.1931 52.3525 76.4782 52.3525C75.7634 52.3525 75.0606 52.5368 74.4377 52.8875C73.8148 53.2382 73.2928 53.7435 72.922 54.3547Z"
+										fill="#EF8727" class="stroke-warning" stroke-width="4.1593"
+										stroke-linecap="round" stroke-linejoin="round" />
+									<path d="M76.4766 65.0439V73.3626" stroke="#F7F8F7" stroke-width="4.1593"
+										stroke-linecap="round" stroke-linejoin="round" />
+									<path d="M76.4766 81.6807H76.496" stroke="#F7F8F7" stroke-width="4.1593"
+										stroke-linecap="round" stroke-linejoin="round" />
+								</svg>
+								<button>Done</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-12 iphone-container">
+					<div class="iphone">
+						<img src="../assets/img/illustrations/phone.png" class="bg-img" alt="">
+						<div class="content struct">
+							<div class="iphone-bar">
+								<span class="time">9:41</span>
+								<div class="icons">
+									<svg width="13" height="8" viewBox="0 0 13 8" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd"
+											d="M11.933 0.339844H11.2422C10.8606 0.339844 10.5513 0.64916 10.5513 1.03072V7.01832C10.5513 7.39988 10.8606 7.7092 11.2422 7.7092H11.933C12.3146 7.7092 12.6239 7.39988 12.6239 7.01832V1.03072C12.6239 0.64916 12.3146 0.339844 11.933 0.339844ZM8.01804 1.95191H8.70891C9.09047 1.95191 9.39979 2.26122 9.39979 2.64278V7.01834C9.39979 7.3999 9.09047 7.70922 8.70891 7.70922H8.01804C7.63647 7.70922 7.32716 7.3999 7.32716 7.01834V2.64278C7.32716 2.26122 7.63647 1.95191 8.01804 1.95191ZM5.48821 3.56397H4.79733C4.41577 3.56397 4.10645 3.87329 4.10645 4.25485V7.01836C4.10645 7.39992 4.41577 7.70923 4.79733 7.70923H5.48821C5.86977 7.70923 6.17908 7.39992 6.17908 7.01836V4.25485C6.17908 3.87329 5.86977 3.56397 5.48821 3.56397ZM2.26066 4.9461H1.56978C1.18822 4.9461 0.878906 5.25542 0.878906 5.63698V7.01874C0.878906 7.4003 1.18822 7.70961 1.56978 7.70961H2.26066C2.64222 7.70961 2.95154 7.4003 2.95154 7.01874V5.63698C2.95154 5.25542 2.64222 4.9461 2.26066 4.9461Z"
+											fill="white" />
+									</svg>
+									<svg width="11" height="8" viewBox="0 0 11 8" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd"
+											d="M5.37512 1.68571C6.91214 1.68578 8.39038 2.27587 9.50432 3.33401C9.5882 3.4157 9.72227 3.41467 9.80489 3.3317L10.6067 2.52314C10.6486 2.48106 10.6719 2.42406 10.6715 2.36475C10.6712 2.30543 10.6472 2.24871 10.6049 2.20712C7.68115 -0.592476 3.06863 -0.592476 0.144903 2.20712C0.102551 2.24868 0.0785204 2.30539 0.0781298 2.3647C0.0777393 2.42401 0.101021 2.48103 0.142822 2.52314L0.944892 3.3317C1.02745 3.4148 1.16163 3.41583 1.24547 3.33401C2.35955 2.2758 3.83796 1.68571 5.37512 1.68571ZM5.37747 4.31692C6.22196 4.31686 7.03632 4.63049 7.6623 5.19685C7.74697 5.27723 7.88034 5.27549 7.96287 5.19293L8.76379 4.38437C8.80597 4.34196 8.82937 4.28443 8.82876 4.22464C8.82815 4.16486 8.80358 4.10781 8.76055 4.06626C6.85431 2.29457 3.90225 2.29457 1.99601 4.06626C1.95295 4.10781 1.92838 4.16488 1.92782 4.22469C1.92725 4.28449 1.95074 4.34202 1.99301 4.38437L2.79369 5.19293C2.87622 5.27549 3.0096 5.27723 3.09426 5.19685C3.71983 4.63086 4.53354 4.31726 5.37747 4.31692ZM6.97956 6.08618C6.98079 6.14613 6.9572 6.20393 6.91436 6.24593L5.52895 7.64288C5.48833 7.68394 5.43296 7.70704 5.37519 7.70704C5.31742 7.70704 5.26205 7.68394 5.22144 7.64288L3.83579 6.24593C3.79298 6.2039 3.76944 6.14608 3.7707 6.08613C3.77197 6.02617 3.79795 5.9694 3.84249 5.92921C4.72727 5.18149 6.02311 5.18149 6.90789 5.92921C6.9524 5.96943 6.97833 6.02622 6.97956 6.08618Z"
+											fill="white" />
+									</svg>
+									<svg width="17" height="8" viewBox="0 0 17 8" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<rect opacity="0.35" x="0.470472" y="0.454847" width="14.5083" height="7.139"
+											rx="1.49704" stroke="white" stroke-width="0.690943" />
+										<path opacity="0.4"
+											d="M16.0156 2.64258V5.40609C16.5716 5.17203 16.9331 4.62756 16.9331 4.02433C16.9331 3.4211 16.5716 2.87663 16.0156 2.64258Z"
+											fill="white" />
+										<rect x="1.50781" y="1.49121" width="12.4358" height="5.06643" rx="0.921258"
+											fill="white" />
+									</svg>
+								</div>
+							</div>
+							<div class="content">
+								<h3>Insufficient funds</h3>
+								<p>You don’t have enough funds to complete this payment.</p>
+								<svg width="91" height="91" viewBox="0 0 91 91" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M86.3369 45.6684C86.3369 55.8705 82.5024 65.7 75.594 73.2071C68.6857 80.7143 59.2081 85.3507 49.0411 86.1967C38.8742 87.0428 28.7606 84.0367 20.7064 77.7747C12.6522 71.5127 7.24581 62.4523 5.55951 52.3905C3.87322 42.3287 6.03023 32.0007 11.6027 23.4549C17.1752 14.9092 25.7561 8.77 35.6433 6.25509C45.5306 3.74017 56.0019 5.03325 64.9804 9.87784C69.6937 12.4211 73.8149 15.8455 77.1479 19.9204"
+										class="stroke-warning" stroke-width="8.13368" />
+									<path
+										d="M48.229 58.864C52.003 58.864 55.182 57.453 57.766 54.631L61.999 58.711C60.367 60.649 58.327 62.128 55.879 63.148C53.465 64.168 50.796 64.678 47.872 64.678C44.914 64.678 42.16 64.134 39.61 63.046C37.094 61.958 34.952 60.428 33.184 58.456C31.45 56.484 30.226 54.206 29.512 51.622H23.698V48.052H28.849C28.815 47.678 28.798 47.1 28.798 46.318C28.798 45.536 28.815 44.958 28.849 44.584H23.698V41.014H29.512C30.226 38.43 31.45 36.152 33.184 34.18C34.952 32.208 37.094 30.678 39.61 29.59C42.16 28.502 44.914 27.958 47.872 27.958C50.796 27.958 53.465 28.468 55.879 29.488C58.327 30.508 60.367 31.987 61.999 33.925L57.766 37.954C55.182 35.166 52.003 33.772 48.229 33.772C45.509 33.772 43.112 34.418 41.038 35.71C38.998 37.002 37.485 38.77 36.499 41.014H51.136V44.584H35.53C35.462 45.332 35.428 45.91 35.428 46.318C35.428 46.726 35.462 47.304 35.53 48.052H51.136V51.622H36.499C37.485 53.866 38.998 55.634 41.038 56.926C43.112 58.218 45.509 58.864 48.229 58.864Z"
+										class="fill-warning" />
+								</svg>
+								<button>Done</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-12 iphone-container">
+					<div class="iphone">
+						<img src="../assets/img/illustrations/phone.png" class="bg-img" alt="">
+						<div class="content struct">
+							<div class="iphone-bar">
+								<span class="time">9:41</span>
+								<div class="icons">
+									<svg width="13" height="8" viewBox="0 0 13 8" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd"
+											d="M11.933 0.339844H11.2422C10.8606 0.339844 10.5513 0.64916 10.5513 1.03072V7.01832C10.5513 7.39988 10.8606 7.7092 11.2422 7.7092H11.933C12.3146 7.7092 12.6239 7.39988 12.6239 7.01832V1.03072C12.6239 0.64916 12.3146 0.339844 11.933 0.339844ZM8.01804 1.95191H8.70891C9.09047 1.95191 9.39979 2.26122 9.39979 2.64278V7.01834C9.39979 7.3999 9.09047 7.70922 8.70891 7.70922H8.01804C7.63647 7.70922 7.32716 7.3999 7.32716 7.01834V2.64278C7.32716 2.26122 7.63647 1.95191 8.01804 1.95191ZM5.48821 3.56397H4.79733C4.41577 3.56397 4.10645 3.87329 4.10645 4.25485V7.01836C4.10645 7.39992 4.41577 7.70923 4.79733 7.70923H5.48821C5.86977 7.70923 6.17908 7.39992 6.17908 7.01836V4.25485C6.17908 3.87329 5.86977 3.56397 5.48821 3.56397ZM2.26066 4.9461H1.56978C1.18822 4.9461 0.878906 5.25542 0.878906 5.63698V7.01874C0.878906 7.4003 1.18822 7.70961 1.56978 7.70961H2.26066C2.64222 7.70961 2.95154 7.4003 2.95154 7.01874V5.63698C2.95154 5.25542 2.64222 4.9461 2.26066 4.9461Z"
+											fill="white" />
+									</svg>
+									<svg width="11" height="8" viewBox="0 0 11 8" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd"
+											d="M5.37512 1.68571C6.91214 1.68578 8.39038 2.27587 9.50432 3.33401C9.5882 3.4157 9.72227 3.41467 9.80489 3.3317L10.6067 2.52314C10.6486 2.48106 10.6719 2.42406 10.6715 2.36475C10.6712 2.30543 10.6472 2.24871 10.6049 2.20712C7.68115 -0.592476 3.06863 -0.592476 0.144903 2.20712C0.102551 2.24868 0.0785204 2.30539 0.0781298 2.3647C0.0777393 2.42401 0.101021 2.48103 0.142822 2.52314L0.944892 3.3317C1.02745 3.4148 1.16163 3.41583 1.24547 3.33401C2.35955 2.2758 3.83796 1.68571 5.37512 1.68571ZM5.37747 4.31692C6.22196 4.31686 7.03632 4.63049 7.6623 5.19685C7.74697 5.27723 7.88034 5.27549 7.96287 5.19293L8.76379 4.38437C8.80597 4.34196 8.82937 4.28443 8.82876 4.22464C8.82815 4.16486 8.80358 4.10781 8.76055 4.06626C6.85431 2.29457 3.90225 2.29457 1.99601 4.06626C1.95295 4.10781 1.92838 4.16488 1.92782 4.22469C1.92725 4.28449 1.95074 4.34202 1.99301 4.38437L2.79369 5.19293C2.87622 5.27549 3.0096 5.27723 3.09426 5.19685C3.71983 4.63086 4.53354 4.31726 5.37747 4.31692ZM6.97956 6.08618C6.98079 6.14613 6.9572 6.20393 6.91436 6.24593L5.52895 7.64288C5.48833 7.68394 5.43296 7.70704 5.37519 7.70704C5.31742 7.70704 5.26205 7.68394 5.22144 7.64288L3.83579 6.24593C3.79298 6.2039 3.76944 6.14608 3.7707 6.08613C3.77197 6.02617 3.79795 5.9694 3.84249 5.92921C4.72727 5.18149 6.02311 5.18149 6.90789 5.92921C6.9524 5.96943 6.97833 6.02622 6.97956 6.08618Z"
+											fill="white" />
+									</svg>
+									<svg width="17" height="8" viewBox="0 0 17 8" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<rect opacity="0.35" x="0.470472" y="0.454847" width="14.5083" height="7.139"
+											rx="1.49704" stroke="white" stroke-width="0.690943" />
+										<path opacity="0.4"
+											d="M16.0156 2.64258V5.40609C16.5716 5.17203 16.9331 4.62756 16.9331 4.02433C16.9331 3.4211 16.5716 2.87663 16.0156 2.64258Z"
+											fill="white" />
+										<rect x="1.50781" y="1.49121" width="12.4358" height="5.06643" rx="0.921258"
+											fill="white" />
+									</svg>
+								</div>
+							</div>
+							<div class="content">
+								<h3>Oops! An error occurred</h3>
+								<p>This payment was already completed.</p>
+								<svg width="127" height="127" viewBox="0 0 127 127" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path d="M83.3843 43.6182L44.5234 82.4791" class="stroke-failed"
+										stroke-width="8.13368" stroke-linecap="round" stroke-linejoin="round" />
+									<path d="M44.5241 43.6182L92.7617 91.8558" class="stroke-failed"
+										stroke-width="8.13368" stroke-linecap="round" stroke-linejoin="round" />
+									<path
+										d="M92.8828 91.6185C85.829 98.9891 76.2626 103.439 66.0811 104.087C55.8995 104.734 45.8466 101.53 37.9164 95.1122C29.9862 88.6939 24.7579 79.5295 23.2686 69.4367C21.7793 59.3439 24.1379 49.06 29.8763 40.6248C35.6148 32.1896 44.3141 26.2194 54.2486 23.8982C64.1831 21.5771 74.6272 23.0746 83.5092 28.0938C92.3913 33.113 99.0624 41.2872 102.199 50.995C103.846 56.0912 104.456 61.4147 104.047 66.6631"
+										class="stroke-failed" stroke-width="8.13368" />
+								</svg>
+								<button>Done</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<!-- Plugins
+	================================================== -->
+
+	<!-- jQuery -->
+	<script src="../assets/js/jquery-3.4.1.slim.min.js"></script>
+	<!-- PooperJS -->
+	<script src="../assets/js/popper.min.js"></script>
+	<!-- Bootstrap -->
+	<script src="../assets/js/bootstrap.min.js"></script>
+	<!-- Application -->
+	<script src="../assets/js/main.js"></script>
+	<!-- ChartJs -->
+	<script src="../assets/js/chart.min.js"></script>
+	<script>
+		const primary_color = getComputedStyle(root).getPropertyValue('--primary-color');
+		const text_light_color = getComputedStyle(root).getPropertyValue('--text-light-color');
+		const font_primary_regular = getComputedStyle(root).getPropertyValue('--font-primary-regular');
+		const months = ['OCT', 'NOV', 'DEC', 'JAN', 'FEB'];
+		const values = [12, 19, 9, 10, 2];
+		const ctx = document.getElementById('myChart').getContext('2d');
+		const myChart = new Chart(ctx, {
+			type: 'line',
+			data: {
+				labels: months,
+				datasets: [{
+					data: values,
+					fill: false,
+					borderColor: primary_color,
+					borderWidth: 1.7,
+					pointRadius: 1.5
+				}]
+			},
+			options: {
+				responsive: true,
+				maintainAspectRatio: false,
+				tooltips: {
+					callbacks: {
+						title: () => {},
+						label: function (tooltipItem, data) {
+							return '€ ' + data['datasets'][0]['data'][tooltipItem['index']];
+						}
+					},
+					displayColors: false
+				},
+				scales: {
+					yAxes: [{
+						gridLines: {
+							color: "#00000000",
+						},
+						ticks: {
+							callback: () => {}
+						}
+					}],
+					xAxes: [{
+						gridLines: {
+							borderDash: [10, 10],
+							offsetGridLines: true,
+							drawBorder: false
+						},
+						ticks: {
+							fontColor: text_light_color,
+							fontSize: 8.29,
+							fontFamily: font_primary_regular,
+							padding: -8,
+							beginAtZero: true
+						}
+					}]
+				},
+				legend: {
+					display: false
+				},
+				layout: {
+					padding: {
+						left: 10,
+						right: 20
+					}
+				}
+			}
+		});
+	</script>
+</body>
+
+</html>

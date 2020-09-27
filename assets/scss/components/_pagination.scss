@@ -1,0 +1,95 @@
+%active-pagination {
+    background: rgba($primary-color, 0.1);
+    transition: all 300ms ease-in-out;
+
+    a {
+        color: $secondary-color;
+        font-weight: bold;
+        font-family: $font-primary-semibold;
+        transition: all 300s ease-in-out;
+    }
+}
+
+.pagination {
+    justify-content: flex-end;
+    padding: 10px 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    font-family: $font-primary-light;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 8px 12px;
+    color: $text-light-color;
+    &.active {
+        font-family: $font-primary-bold;
+        color: $secondary-color;
+        font-weight: bold;
+        background-color: rgba($primary-color, 0.1);
+    }
+
+    .page-item {
+        transition: all 300ms ease-in-out;
+        border-radius: 3px;
+        margin-left: 5px;
+
+        &.active {
+            @extend %active-pagination;
+        }
+
+        &:hover {
+            background: rgba($primary-color, 0.1);
+        }
+
+        .page-link {
+            background: none;
+            border: none;
+            text-decoration: none;
+            color: $text-light-color;
+        }
+
+        &:first-child,
+        &:last-child {
+            a {
+                color: $primary-color;
+                text-decoration: underline;
+                text-transform: initial;
+            }
+
+            &:hover {
+                background-color: $primary-color;
+                transition: all 0.3s ease-in-out;
+
+                a {
+                    color: $white-color !important;
+                }
+            }
+
+            &.disabled {
+                background: none !important;
+                cursor: not-allowed;
+                pointer-events: none;
+
+                a {
+                    color: $secondary-light-color;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    @include for-size(phone-only) {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .page-item {
+            margin: 0;
+
+            .page-link {
+                font-size: 12px;
+                padding: 8px 12px;
+            }
+        }
+    }
+}

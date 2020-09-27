@@ -1,0 +1,90 @@
+// -------- [BEGIN] Recommanded Variables to change -------- //
+// Primary Colors
+$primary-color: #02d871; // main color
+$primary-dark-color: #32483e; // Dark main color
+$link-color: #02a556; // Links Color
+
+// Secondary Colors
+$secondary-color: #222222; // Headeing Color
+$secondary-light-color: #9d9f9e; // Light text Color
+$text-light-color: #666666; // Dark text Color
+
+// Backgrounds
+$background-color: #f7f8f7; // main body background color
+$warning-dark-color: #b65801; // Warning darker color (alert badges & hover warning buttons)
+$warning-light-color: #ef8727; // Warning Lighter color
+$nav-highlight: rgba(2, 216, 113, 0.15); // Navbar highlight (active and hover)
+$plates-bg: #f1f3f1; // Table rows background color on hover
+$accent: #ef8727; // Color for failed payment state on Modal
+$border-color: rgba(#8c9c95, 0.3); //input fields border color
+
+// Buttons
+$btn-bg: $primary-color; // Main button background color
+$btn-border: #02d871; // Main button border color
+$btn-dark: #073f24; // Dark button background color
+
+// Primary Font Family
+$font-primary-light: "Montserrat Light";
+$font-primary-regular: "Montserrat Regular";
+$font-primary-medium: "Montserrat Medium";
+$font-primary-semibold: "Montserrat Semibold";
+$font-primary-bold: "Montserrat Bold";
+
+// Secondary Font Family
+$font-secondary-light: "Raleway Light";
+$font-secondary-regular: "Raleway Regular";
+$font-secondary-medium: "Raleway Medium";
+$font-secondary-semibold: "Raleway Semibold";
+$font-secondary-bold: "Raleway Bold";
+
+// Font sizes
+$size-small: 12px; // caption & table row status
+$size-xs: 14px; // link & h6
+$size-sm: 16px; // Paragraph & Label & button & h5
+$size-re: 18px; // h4
+$size-md: 24px; // h3
+$size-lg: 24px; // h2
+$size-xl: 36px; // h1
+
+// Pass Values to css variables to get accese by Javascript
+:root {
+	--primary-color: #02d871; // the same primary color
+	--text-light-color: #666666; // the same dark text color
+	--font-primary-regular: "Montserrat Regular"; // the same Primary font
+}
+// -------- [END] Recommanded Variables to change -------- //
+
+$text-dark-color: #02170d;
+$white-color: #ffffff;
+$black-color: #000000;
+$warning-bg: rgba(239, 135, 39, 0.05);
+$primary-light-color: rgba($primary-color, 0.25);
+
+// Table row status text colors
+$open-color: $primary-color;
+$failed-color: #e40828;
+$expired-color: #858585;
+$paid-color: #00ad5a;
+$cancel-color: #b65801;
+
+// Table row status background colors
+$open-bg: rgba(66, 139, 202, 0.08);
+$failed-bg: rgba(237, 69, 93, 0.05);
+$expired-bg: rgba(157, 159, 158, 0.05);
+$paid-bg: rgba(2, 216, 113, 0.05);
+$cancel-bg: rgba(239, 135, 39, 0.05);
+
+$btn-disabled: rgba($primary-color, 0.4);
+$input-disabled: rgba(102, 102, 102, 0.15);
+
+// Borders
+$border-1: 1px solid $border-color;
+$border-2: 1px dashed $border-color;
+
+// Shadows
+$shadow-1: 2px 2px 2px rgba($black-color, 0.01);
+$shadow-2: 0px 2px 3px rgba($black-color, 0.02);
+$shadow-3: 2px 2px 16px rgba($black-color, 0.14);
+
+// Shadow on hover
+$shadow-hover-1: 0px 2px 3px rgba($black-color, 0.1);

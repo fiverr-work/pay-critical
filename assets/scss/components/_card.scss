@@ -1,0 +1,109 @@
+﻿.ocard {
+    display: inline-block;
+    background-color: $white-color;
+    transition: box-shadow 200ms ease-in;
+    border: none;
+    border-radius: 2px;
+    padding: 24px 0;
+    box-shadow: $shadow-2;
+    margin-right: 20px;
+    margin-bottom: 20px;
+
+    &__header {
+        border-bottom: 1px solid #f0f0f0;
+        padding: 0px 70px 13px 31px;
+
+        &__title {
+            color: $secondary-color;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 100%;
+        }
+
+        &__paragraph {
+            font-size: 12px;
+            line-height: 100%;
+            margin-bottom: 0;
+        }
+    }
+
+    &__body {
+        padding: 13px 30px 0;
+
+        &__info {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding-bottom: 24px;
+
+            .items::after {
+                content: "|";
+                margin: 0 10px;
+            }
+
+            .items,
+            .price {
+                font-size: 16px;
+                color: $text-light-color;
+            }
+        }
+
+        &__pickup {
+            .pickup {
+                margin-bottom: 5px;
+                display: block;
+                text-transform: uppercase;
+                font-weight: 600;
+                font-size: 14px;
+                color: $secondary-light-color;
+                line-height: 100%;
+            }
+
+            .time {
+                color: $secondary-color;
+                font-weight: 600;
+                text-align: left;
+                font-size: 16px;
+                font-family: $font-primary-semibold;
+                margin-bottom: 31px;
+
+                &.alert {
+                    font-family: $font-primary-regular;
+                    font-size: 14px;
+                    line-height: 120%;
+                    color: $warning-dark-color;
+                    display: inline-block;
+                    border-color: inherit !important;
+                }
+            }
+        }
+
+        &__action {
+            text-align: center;
+
+            button {
+                font-size: 14px !important;
+                padding: 14px 37px;
+                line-height: 17px;
+            }
+        }
+    }
+
+    &.warning {
+        border: 2px solid $warning-dark-color;
+    }
+
+    &:hover {
+        transition: border 200ms ease-in;
+        box-shadow: $shadow-hover-1;
+    }
+
+    @include for-size(phone-only) {
+        margin: 0 auto 20px !important;
+        display: block;
+
+        .time {
+            font-size: 14px;
+        }
+    }
+}

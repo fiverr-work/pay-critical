@@ -1,0 +1,36 @@
+.form-control {
+    &.disable {
+        background-color: $input-disabled;
+        color: $secondary-light-color;
+        border-color: $border-color;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+
+    &::placeholder {
+        color: $secondary-light-color;
+        display: flex;
+        align-items: center;
+    }
+}
+
+input,
+input.form-control,
+.input-group-text {
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    height: auto;
+    padding: 12px 20px;
+}
+
+textarea {
+    border-color: $border-color;
+}
+
+.input-group-prepend {
+    .input-group-text {
+        background: none;
+        padding: 0 15px;
+        border-color: $border-color;
+    }
+}

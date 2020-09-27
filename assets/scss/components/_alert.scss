@@ -1,0 +1,132 @@
+.alert {
+	color: $warning-dark-color;
+	padding: 4px 15px !important;
+	background-color: $warning-bg;
+}
+
+.field-validation-error {
+	color: $warning-dark-color;
+	padding: 4px 15px !important;
+	background-color: $warning-bg;
+	display: inline-flex;
+	margin-top: 10px;
+}
+
+.validation-summary-errors ul {
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+}
+
+.alert-success {
+	color: #01703b;
+	background-color: #ccf7e3;
+	border-color: #b8f4d7;
+	margin-top: 0.5rem;
+	line-height: 24px;
+	margin-bottom: 1rem;
+	padding-left: 15px;
+	padding-top: 0.8rem;
+	padding-bottom: 0.8rem;
+}
+
+.alert-popup {
+	display: flex;
+	align-items: center;
+	border: 1px solid;
+	position: fixed;
+	top: -50%;
+	right: 50%;
+	transform: translateX(78%);
+	z-index: 1031;
+	background-color: white;
+	padding: 0.75rem 1.25rem;
+	border-radius: 5px;
+	box-shadow: $shadow-2;
+	opacity: 0;
+	pointer-events: none;
+	transition: top 1s ease-out, opacity 800ms ease-out;
+
+	&::before {
+		content: "";
+		min-width: 30px;
+		max-width: 30px;
+		height: 30px;
+		border-radius: 50px;
+		display: inline-block;
+		margin-right: 1.25rem;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: contain;
+	}
+
+	p {
+		margin: 0;
+	}
+
+	&.success {
+		background-color: #d4edda;
+		border-color: #c3e6cb;
+
+		p {
+			color: #155724;
+		}
+
+		&::before {
+			background-image: url("../../../Images/pay-completed.svg");
+		}
+	}
+
+	&.expired {
+		background-color: #e2e3e5;
+		border-color: #d6d8db;
+
+		p {
+			color: #383d41;
+		}
+
+		&::before {
+			background-image: url(../../../Images/pay-rejected2.svg);
+		}
+	}
+
+	&.reject {
+		background-color: #fff3cd;
+		border-color: #ffeeba;
+
+		p {
+			color: #856404;
+		}
+
+		&::before {
+			min-width: 40px;
+			max-width: 40px;
+			height: 40px;
+			background-image: url(../../../Images/pay-rejected.svg);
+		}
+	}
+
+	&.show {
+		opacity: 0.8;
+		pointer-events: all;
+		transition: top 400ms ease-in-out, opacity 300ms ease-in-out;
+		top: 20px;
+	}
+
+	@include for-size(desktop-up) {
+		transform: translateX(50%);
+		&.show {
+			top: 100px;
+		}
+	}
+
+	@include for-size(tablet-portrait-up) {
+		border-radius: 0;
+		left: 0;
+		right: 0;
+		transform: translateX(0%);
+
+		&.show {
+			top: 63px;
+		}
+	}
+}

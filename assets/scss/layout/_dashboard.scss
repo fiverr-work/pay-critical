@@ -1,0 +1,77 @@
+﻿main {
+    padding: 30px 40px 0;
+    margin-left: 270px;
+
+    @include for-size(phone-only) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    @include for-size(desktop-up) {
+        padding-top: 70px;
+        margin-left: auto;
+    }
+
+    .header {
+        margin: 1.5rem 0 3rem;
+
+        .return {
+            margin-bottom: 25px;
+            display: inline-block;
+            color: $secondary-color;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: initial;
+
+            img {
+                margin-right: 7px;
+            }
+        }
+
+        p {
+            font-size: 16px;
+            max-width: 600px;
+            padding-top: 10px;
+
+            @include for-size(phone-only) {
+                margin: 0 auto;
+            }
+        }
+
+        @include for-size(phone-only) {
+            margin: 10px auto 20px;
+        }
+
+        .main-btn {
+            text-transform: initial;
+        }
+    }
+
+    .body {
+        .caption {
+            text-transform: uppercase;
+        }
+
+        .sub-link {
+            text-decoration: none;
+        }
+
+        .subject {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-top: 1rem;
+
+            @include for-size(phone-only) {
+                margin: 1rem 0 1.5rem;
+                text-align: center;
+
+                p {
+                    max-width: 300px;
+                    margin: 10px auto 20px;
+                }
+            }
+        }
+    }
+}

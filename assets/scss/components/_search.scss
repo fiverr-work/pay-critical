@@ -1,0 +1,36 @@
+.search {
+    border-bottom: 1px solid $text-light-color;
+
+    .search-field {
+        border: none;
+        padding: 5px 0;
+        width: 88%;
+        margin: 0;
+        background: none;
+        outline: none;
+    }
+
+    svg {
+        margin-bottom: 4px;
+
+        path {
+            stroke: $text-light-color;
+        }
+    }
+
+    &.input-focus {
+        border-bottom-color: $primary-color;
+
+        .search-field {
+            &:focus {
+                box-shadow: none;
+            }
+        }
+
+        svg {
+            path {
+                stroke: $primary-color;
+            }
+        }
+    }
+}

@@ -1,0 +1,258 @@
+#pills-tabContent {
+    width: 342px;
+
+    @include for-size(phone-only) {
+        width: auto;
+    }
+}
+
+#qr-illustration {
+    /*width: 100%;*/
+    /*height: 100%;*/
+    display: inline;
+
+    @include for-size(phone-only) {
+        width: 180px;
+    }
+}
+
+#qr-code canvas {
+    width: 100%;
+    display: inline;
+}
+
+.keyboard {
+}
+
+.card {
+    padding: 30px;
+    margin-bottom: 30px;
+    background-color: $white-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    @include for-size(phone-only) {
+        .mb-4 {
+            font-size: 24px;
+        }
+    }
+
+    .step {
+        background-color: $primary-light-color;
+        padding: 15px 30px;
+        border-radius: 0 10px 10px 0;
+        text-transform: uppercase;
+        color: $text-light-color;
+        font-size: 16px;
+        line-height: 20px;
+        position: absolute;
+        top: 15px;
+        left: 0;
+
+        @include for-size(tablet-landscape-up) {
+            display: none;
+        }
+    }
+
+    .keyboard tr {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 342px;
+
+        @include for-size(phone-only) {
+            display: none;
+
+            &:first-child {
+                display: block;
+            }
+        }
+
+        td {
+            &.price-field {
+                width: 100%;
+
+                .price {
+                    text-align: center;
+                    font-size: 40px;
+                    margin-bottom: 10px;
+                    line-height: 50px;
+                    color: $secondary-color;
+                    border-radius: 5px;
+                    padding: 5px;
+                    width: 100%;
+
+                    &::placeholder {
+                        opacity: 0.6;
+                    }
+
+                    @include for-size(phone-only) {
+                        font-size: 28px;
+                    }
+                }
+            }
+
+            input[type="button"],
+            button {
+                background: $white-color;
+                border: 1px solid $border-color;
+                border-radius: 1px;
+                padding: 10px 20px;
+                max-width: 110px;
+                min-width: 110px;
+                text-align: center;
+                margin: 2px;
+                transition: background 400ms ease-in-out, border 400ms ease-in-out, color 400ms ease-in-out;
+
+                svg path {
+                    fill: $secondary-color;
+                    transition: fill 400ms ease-in-out;
+                }
+
+                &:hover {
+                    transition: background 400ms ease-in-out, border 400ms ease-in-out, color 400ms ease-in-out;
+                    background-color: $primary-color;
+                    border-color: $primary-color;
+                    color: $white-color;
+
+                    svg path {
+                        fill: $white-color;
+                        transition: fill 400ms ease-in-out;
+                    }
+                }
+
+                &.backspace1,
+                &.backspace2 {
+                    padding: 12.3px 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+
+            .phone-number {
+                border: 1px solid $border-color;
+                width: 100%;
+                border-radius: 5px;
+                color: #333333;
+                text-align: center;
+                font-size: 28px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+
+                @include for-size(phone-only) {
+                    font-size: 16px;
+                }
+            }
+
+            .iti__selected-flag {
+                @include for-size(phone-only) {
+                    padding: 0 10px;
+                }
+            }
+        }
+    }
+
+    .nav-item {
+        text-align: center;
+        margin: 0 !important;
+        min-width: 240px;
+
+        &:hover {
+            border-bottom: none !important;
+        }
+        a {
+            border-radius: 0;
+            svg {
+                circle {
+                    fill: $plates-bg;
+                }
+                path {
+                    transition: 0s;
+                    stroke: $primary-color;
+                }
+                rect {
+                    fill: $primary-color;
+                    &.last-rect {
+                        stroke: $primary-color;
+                        fill: none;
+                    }
+                }
+            }
+            &.active {
+                svg {
+                    circle {
+                        fill: $primary-color;
+                    }
+                    path {
+                        transition: 0s;
+                        stroke: $white-color;
+                    }
+                    rect {
+                        fill: $white-color;
+                        &.last-rect {
+                            stroke: $white-color;
+                            fill: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #pills-tab a.btn {
+        color: $secondary-color;
+        font-size: 14px;
+        line-height: 19px;
+        font-weight: 300;
+        border-radius: 0;
+        text-decoration: none;
+        padding: 0 0 10px;
+        transition: border 400ms ease-in-out, color 400ms ease-in-out;
+
+        &:focus {
+            box-shadow: none !important;
+        }
+
+        &:hover,
+        &.active {
+            transition: border 400ms ease-in-out, color 400ms ease-in-out;
+            border-bottom: 3px solid $primary-color;
+            color: $primary-color;
+            font-weight: 600;
+        }
+
+        svg {
+            margin-right: 9px;
+        }
+    }
+
+    .tab-content {
+        margin-top: 0 !important;
+        text-align: center;
+    }
+
+    @include for-size(phone-only) {
+        .nav-item:first-child {
+            padding-bottom: 20px !important;
+        }
+    }
+}
+
+#cta {
+    margin-left: auto;
+    margin-right: 0;
+    width: auto !important;
+}
+
+#btn-open-modal {
+    width: 100% !important;
+    margin-top: 1rem !important;
+}
+
+#btn-create-qr {
+    width: 100% !important;
+    margin-top: 2rem !important;
+}

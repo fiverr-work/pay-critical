@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" dir="ltr" lang="en">
+<!--<![endif]-->
+
+<head>
+	<title>Receive Payment</title>
+	<!-- Always force latest IE rendering engine or request Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!-- meta character set -->
+	<meta charset="UTF-8" />
+	<!-- Mobile Specific Meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Meta Description, Keywords and Author -->
+	<meta name="Keywords" content="">
+	<meta name="author" content="">
+	<meta name="Description" content="">
+
+	<!-- Stylesheet
+	================================================== -->
+	<link rel="stylesheet" href="../assets/css/style.css">
+
+	<!-- Favicon
+	================================================== -->
+	<link rel="shortcut icon" href="">
+
+	<!-- JavaScript
+	================================================== -->
+	<!--[if lt IE 9]>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+		<![endif]-->
+
+	<!-- Modernizer Script for old Browsers -->
+	<!--script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script-->
+</head>
+
+<body>
+
+	<aside id="side-navbar">
+		<div class="logo">
+			<a href="../home/index.html">
+				<img src="../assets/img/logo.svg" alt="Ticket Serviços">
+			</a>
+		</div>
+		<label>Balence</label>
+		<div class="balance">
+			<div id="result-balance">
+				€ 9.583,00
+			</div>
+			<img class="toggle-balance icon eye-icon m-0 eye-off" src="../assets/img/icons/eye-off.svg" />
+			<svg class="toggle-balance icon eye-icon m-0 eye-on d-none" width="24" height="24" viewBox="0 0 24 24"
+				fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12C23 12 19 20 12 20C5 20 1 12 1 12Z" stroke="#DCE0DE"
+					stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+				<path
+					d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z"
+					stroke="#DCE0DE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+			</svg>
+		</div>
+		<input type="checkbox" class="d-none" id="menu-checked">
+		<label class="navbar-toggler-label m-0" for="menu-checked">
+			<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M11 20H29" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+				<path d="M11 14H29" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+				<path d="M11 26H29" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+			</svg>
+		</label>
+		<div class="navbar">
+			<label class="close" for="menu-checked">
+				<svg height="12" width="12" viewBox="0 0 329.26933 329" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="m194.800781 164.769531 128.210938-128.214843c8.34375-8.339844 8.34375-21.824219 0-30.164063-8.339844-8.339844-21.824219-8.339844-30.164063 0l-128.214844 128.214844-128.210937-128.214844c-8.34375-8.339844-21.824219-8.339844-30.164063 0-8.34375 8.339844-8.34375 21.824219 0 30.164063l128.210938 128.214843-128.210938 128.214844c-8.34375 8.339844-8.34375 21.824219 0 30.164063 4.15625 4.160156 9.621094 6.25 15.082032 6.25 5.460937 0 10.921875-2.089844 15.082031-6.25l128.210937-128.214844 128.214844 128.214844c4.160156 4.160156 9.621094 6.25 15.082032 6.25 5.460937 0 10.921874-2.089844 15.082031-6.25 8.34375-8.339844 8.34375-21.824219 0-30.164063zm0 0" />
+				</svg>
+			</label>
+			<ul>
+				<li class="nav-link animated fadeIn">
+					<a href="../profile/index.html">
+						<svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M16.6666 17.5V15.8333C16.6666 14.9493 16.3154 14.1014 15.6903 13.4763C15.0652 12.8512 14.2173 12.5 13.3333 12.5H6.66658C5.78253 12.5 4.93468 12.8512 4.30956 13.4763C3.68444 14.1014 3.33325 14.9493 3.33325 15.8333V17.5"
+								stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+							<path
+								d="M10.0001 9.16667C11.841 9.16667 13.3334 7.67428 13.3334 5.83333C13.3334 3.99238 11.841 2.5 10.0001 2.5C8.15913 2.5 6.66675 3.99238 6.66675 5.83333C6.66675 7.67428 8.15913 9.16667 10.0001 9.16667Z"
+								stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+						<span>Profile</span>
+					</a>
+					<span class="submenu-arrow">
+						<svg width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M1 1L4.75671 5.17412C5.15395 5.6155 5.84605 5.6155 6.24329 5.17412L7.75 3.5L10 1"
+								stroke="white" stroke-width="2" />
+						</svg>
+					</span>
+					<ul class="submenu">
+						<li><a href="#">Change Password</a></li>
+						<li><a href="#">Close Account</a></li>
+					</ul>
+				</li>
+				<li class="nav-link animated fadeIn">
+					<a href="../home/index.html">
+						<svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M2.5 7.50001L10 1.66667L17.5 7.50001V16.6667C17.5 17.1087 17.3244 17.5326 17.0118 17.8452C16.6993 18.1577 16.2754 18.3333 15.8333 18.3333H4.16667C3.72464 18.3333 3.30072 18.1577 2.98816 17.8452C2.67559 17.5326 2.5 17.1087 2.5 16.6667V7.50001Z"
+								stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+						<span>Home</span>
+					</a>
+				</li>
+				<li class="nav-link animated fadeIn">
+					<a href="../transactions/index.html">
+						<svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<g clip-path="url(#clip0)">
+								<path d="M9.86426 1.54955L14.6294 3.09908L13.0798 7.8642" stroke="black"
+									stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M9.7334 18.4505L4.9683 16.9009L6.51784 12.1358" stroke="black" stroke-width="2"
+									stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M2.00004 9.53023L14.6294 3.09908" stroke="black" stroke-width="2"
+									stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M17.5976 10.4698L4.9683 16.9009" stroke="black" stroke-width="2"
+									stroke-linecap="round" stroke-linejoin="round" />
+							</g>
+							<defs>
+								<clipPath id="clip0">
+									<path d="M0 0H20V20H0V0Z" fill="white" />
+								</clipPath>
+							</defs>
+						</svg>
+						<span>Transitions</span>
+					</a>
+				</li>
+				<li class="nav-link animated fadeIn active">
+					<a href="./index.html">
+						<svg class="icon euro-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<g clip-path="url(#clip0)">
+								<path
+									d="M11.709 14.024C13.115 14.024 14.2993 13.4983 15.262 12.447L16.839 13.967C16.231 14.689 15.471 15.24 14.559 15.62C13.6597 16 12.6653 16.19 11.576 16.19C10.474 16.19 9.448 15.9873 8.498 15.582C7.56067 15.1767 6.76267 14.6067 6.104 13.872C5.458 13.1373 5.002 12.2887 4.736 11.326H2.57V9.996H4.489C4.47633 9.85667 4.47 9.64133 4.47 9.35C4.47 9.05867 4.47633 8.84333 4.489 8.704H2.57V7.374H4.736C5.002 6.41133 5.458 5.56267 6.104 4.828C6.76267 4.09333 7.56067 3.52333 8.498 3.118C9.448 2.71267 10.474 2.51 11.576 2.51C12.6653 2.51 13.6597 2.7 14.559 3.08C15.471 3.46 16.231 4.011 16.839 4.733L15.262 6.234C14.2993 5.19533 13.115 4.676 11.709 4.676C10.6957 4.676 9.80267 4.91667 9.03 5.398C8.27 5.87933 7.70633 6.538 7.339 7.374H12.792V8.704H6.978C6.95267 8.98267 6.94 9.198 6.94 9.35C6.94 9.502 6.95267 9.71733 6.978 9.996H12.792V11.326H7.339C7.70633 12.162 8.27 12.8207 9.03 13.302C9.80267 13.7833 10.6957 14.024 11.709 14.024Z"
+									fill="#222222" />
+							</g>
+							<defs>
+								<clipPath id="clip0">
+									<path d="M0 0H20V20H0V0Z" fill="white" />
+								</clipPath>
+							</defs>
+						</svg>
+						<span>Receive payment</span>
+					</a>
+				</li>
+				<li class="nav-link animated fadeIn">
+					<a href="../menu/index.html">
+						<svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M1.66797 2.5H6.66797C7.55202 2.5 8.39987 2.85119 9.02499 3.47631C9.65011 4.10143 10.0013 4.94928 10.0013 5.83333V17.5C10.0013 16.837 9.73791 16.2011 9.26907 15.7322C8.80023 15.2634 8.16434 15 7.5013 15H1.66797V2.5Z"
+								stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+							<path
+								d="M18.3333 2.5H13.3333C12.4493 2.5 11.6014 2.85119 10.9763 3.47631C10.3512 4.10143 10 4.94928 10 5.83333V17.5C10 16.837 10.2634 16.2011 10.7322 15.7322C11.2011 15.2634 11.837 15 12.5 15H18.3333V2.5Z"
+								stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+						<span>Menu</span>
+					</a>
+				</li>
+				<li class="nav-link animated fadeIn">
+					<a href="../orders/index.html">
+						<svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M13.332 3.33325H14.9987C15.4407 3.33325 15.8646 3.50885 16.1772 3.82141C16.4898 4.13397 16.6654 4.55789 16.6654 4.99992V16.6666C16.6654 17.1086 16.4898 17.5325 16.1772 17.8451C15.8646 18.1577 15.4407 18.3333 14.9987 18.3333H4.9987C4.55667 18.3333 4.13275 18.1577 3.82019 17.8451C3.50763 17.5325 3.33203 17.1086 3.33203 16.6666V4.99992C3.33203 4.55789 3.50763 4.13397 3.82019 3.82141C4.13275 3.50885 4.55667 3.33325 4.9987 3.33325H6.66536"
+								stroke="#F7F8F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+							<path
+								d="M12.5013 1.66675H7.5013C7.04106 1.66675 6.66797 2.03984 6.66797 2.50008V4.16675C6.66797 4.62699 7.04106 5.00008 7.5013 5.00008H12.5013C12.9615 5.00008 13.3346 4.62699 13.3346 4.16675V2.50008C13.3346 2.03984 12.9615 1.66675 12.5013 1.66675Z"
+								stroke="#F7F8F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+						<span>Orders</span>
+					</a>
+				</li>
+				<li class="nav-link animated fadeIn">
+					<a href="../simulator/index.html">
+						<svg class="icon" width="14" height="20" viewBox="0 0 14 20" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M11.168 1.66699H2.83464C1.91416 1.66699 1.16797 2.41318 1.16797 3.33366V16.667C1.16797 17.5875 1.91416 18.3337 2.83464 18.3337H11.168C12.0884 18.3337 12.8346 17.5875 12.8346 16.667V3.33366C12.8346 2.41318 12.0884 1.66699 11.168 1.66699Z"
+								stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M7 15H7.00875" stroke="white" stroke-width="2" stroke-linecap="round"
+								stroke-linejoin="round" />
+						</svg>
+						<span>Payment Simulator</span>
+					</a>
+				</li>
+				<li class="nav-link animated fadeIn">
+					<a href="../developers/index.html">
+						<svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path d="M3.33325 14.1667L8.33325 9.16667L3.33325 4.16667" stroke="black" stroke-width="2"
+								stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M10 15.8333H16.6667" stroke="black" stroke-width="2" stroke-linecap="round"
+								stroke-linejoin="round" />
+						</svg>
+						<span>Developers</span>
+					</a>
+				</li>
+				<li class="nav-link animated fadeIn mt-auto">
+					<a href="#">
+						<svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M10.0001 18.3333C14.6025 18.3333 18.3334 14.6024 18.3334 10C18.3334 5.39763 14.6025 1.66667 10.0001 1.66667C5.39771 1.66667 1.66675 5.39763 1.66675 10C1.66675 14.6024 5.39771 18.3333 10.0001 18.3333Z"
+								stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+							<path
+								d="M7.57495 7.5C7.77087 6.94306 8.15758 6.47342 8.66658 6.17428C9.17558 5.87513 9.77403 5.76578 10.3559 5.86559C10.9378 5.96541 11.4656 6.26794 11.8458 6.71961C12.2261 7.17128 12.4342 7.74294 12.4333 8.33333C12.4333 10 9.93328 10.8333 9.93328 10.8333"
+								stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M10 14.1667H10.0083" stroke="black" stroke-width="2" stroke-linecap="round"
+								stroke-linejoin="round" />
+						</svg>
+						<span>Help center</span>
+					</a>
+				</li>
+				<li class="nav-link animated fadeIn">
+					<a href="#">
+						<svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M7.5 17.5H4.16667C3.72464 17.5 3.30072 17.3244 2.98816 17.0118C2.67559 16.6993 2.5 16.2754 2.5 15.8333V4.16667C2.5 3.72464 2.67559 3.30072 2.98816 2.98816C3.30072 2.67559 3.72464 2.5 4.16667 2.5H7.5"
+								stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M13.3333 14.1667L17.4999 10L13.3333 5.83334" stroke="black" stroke-width="2"
+								stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M17.5 10H7.5" stroke="black" stroke-width="2" stroke-linecap="round"
+								stroke-linejoin="round" />
+						</svg>
+						<span>Log out</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</aside>
+
+	<main>
+		<div class="header mb-0">
+			<h1>Receive payment</h1>
+		</div>
+		<div class="body">
+			<form name="calculator">
+				<div class="card">
+					<span class="step">Step 1</span>
+					<h2 class="mb-4">Select the amount</h2>
+					<table class="keyboard">
+						<tr>
+							<td class="price-field">
+								<input type="text" class="price" placeholder="0,00€" name="display" id="display"
+									onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+							</td>
+						</tr>
+						<tr>
+							<td><input type="button" name="" value="1" onclick="calculator.display.value += '1'"></td>
+							<td><input type="button" name="" value="2" onclick="calculator.display.value += '2'"></td>
+							<td><input type="button" name="" value="3" onclick="calculator.display.value += '3'"></td>
+						</tr>
+						<tr>
+							<td><input type="button" name="" value="4" onclick="calculator.display.value += '4'"></td>
+							<td><input type="button" name="" value="5" onclick="calculator.display.value += '5'"></td>
+							<td><input type="button" name="" value="6" onclick="calculator.display.value += '6'"></td>
+						</tr>
+						<tr>
+							<td><input type="button" name="" value="7" onclick="calculator.display.value += '7'"></td>
+							<td><input type="button" name="" value="8" onclick="calculator.display.value += '8'"></td>
+							<td><input type="button" name="" value="9" onclick="calculator.display.value += '9'"></td>
+						</tr>
+						<tr>
+							<td class="invisible"><input type="button" name="" value="00"
+									onclick="calculator.display.value += '00'" id="clear"></td>
+							<td><input type="button" name="" value="0" onclick="calculator.display.value += '0'"></td>
+							<td>
+								<button class="backspace1">
+									<svg width="25" viewBox="0 0 30 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M26.8315 0.383301H8.57857C7.73894 0.383301 7.08183 0.867056 6.64376 1.5996L0.0605469 12.8227L6.64376 24.032C7.08183 24.7645 7.73894 25.2621 8.57857 25.2621H26.8315C28.17 25.2621 29.2652 24.0182 29.2652 22.4978V3.14761C29.2652 1.62724 28.17 0.383301 26.8315 0.383301ZM23.1809 17.7846L21.4651 19.7335L17.0966 14.7715L12.7281 19.7335L11.0123 17.7846L15.3808 12.8227L11.0123 7.86076L12.7281 5.91192L17.0966 10.8739L21.4651 5.91192L23.1809 7.86076L18.8124 12.8227L23.1809 17.7846Z" />
+									</svg>
+								</button>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="card">
+					<span class="step">Step 2</span>
+					<h2 class="mb-4">Select the payment method</h2>
+					<ul class="nav nav-pills mb-3 row" id="pills-tab" role="tablist">
+						<li class="nav-item col">
+							<a class="btn active" id="pills-phone-tab" data-toggle="pill" href="#pills-home" role="tab"
+								aria-controls="pills-home" aria-selected="true">
+								<!-- <img id="tele" src="../assets/img/icons/phone_active.svg" alt=""> -->
+								<svg width="37" height="37" viewBox="0 0 37 37" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<circle cx="18.5" cy="18.5" r="18.5" />
+									<path
+										d="M23.5833 9.83337H14.4166C13.4041 9.83337 12.5833 10.6542 12.5833 11.6667V26.3334C12.5833 27.3459 13.4041 28.1667 14.4166 28.1667H23.5833C24.5958 28.1667 25.4166 27.3459 25.4166 26.3334V11.6667C25.4166 10.6542 24.5958 9.83337 23.5833 9.83337Z"
+										stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+									<path d="M19 24.5H19.01" stroke-width="2" stroke-linecap="round"
+										stroke-linejoin="round" />
+								</svg>
+								Mobile number
+							</a>
+						</li>
+						<li class="nav-item col">
+							<a class="btn" id="pills-qrcode-tab" data-toggle="pill" href="#pills-profile" role="tab"
+								aria-controls="pills-profile" aria-selected="false">
+								<svg width=" 37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<circle cx="18.5" cy="18.5" r="18.5" id="circle" />
+								<rect x="10" y="9.81812" width="8.18182" height="8.18182" rx="1" />
+								<rect x="20.6365" y="20.4545" width="6.54545" height="5.72727" rx="1" />
+								<path
+									d="M10.8284 21.2727V24.3384C10.8284 24.3384 10.7568 24.9555 10.9916 25.19C11.204 25.4019 11.7261 25.3603 11.7261 25.3603H14.909"
+									stroke-width="2" stroke-linecap="round" />
+								<mask id="path-5-inside-1" fill="white">
+									<rect x="19.8181" y="9.81812" width="8.18182" height="8.18182" rx="1" />
+								</mask>
+								<rect class="last-rect" x="19.8181" y="9.81812" width="8.18182" height="8.18182" rx="1"
+									stroke-width="4" mask="url(#path-5-inside-1)" />
+								</svg>
+								QR code
+							</a>
+						</li>
+					</ul>
+					<div class="tab-content" id="pills-tabContent">
+						<div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+							aria-labelledby="pills-phone-tab">
+							<table class="keyboard">
+								<tr class="phone">
+									<td class="d-flex justify-content-center mb-3 mt-3 w-100"
+										style="display: block !important;">
+										<input type="tel" id="phone" class="phone-number" placeholder="000 000 000"
+											name="phone"
+											onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+									</td>
+								</tr>
+								<tr>
+									<td><input type="button" name="" value="1" onclick="calculator.phone.value += '1'">
+									</td>
+									<td><input type="button" name="" value="2" onclick="calculator.phone.value += '2'">
+									</td>
+									<td><input type="button" name="" value="3" onclick="calculator.phone.value += '3'">
+									</td>
+								</tr>
+								<tr>
+									<td><input type="button" name="" value="4" onclick="calculator.phone.value += '4'">
+									</td>
+									<td><input type="button" name="" value="5" onclick="calculator.phone.value += '5'">
+									</td>
+									<td><input type="button" name="" value="6" onclick="calculator.phone.value += '6'">
+									</td>
+								</tr>
+								<tr>
+									<td><input type="button" name="" value="7" onclick="calculator.phone.value += '7'">
+									</td>
+									<td><input type="button" name="" value="8" onclick="calculator.phone.value += '8'">
+									</td>
+									<td><input type="button" name="" value="9" onclick="calculator.phone.value += '9'">
+									</td>
+								</tr>
+								<tr class="float-right">
+									<td><input type="button" name="" value="0" onclick="calculator.phone.value += '0'">
+									</td>
+									<td>
+										<button class="backspace2">
+											<svg width="25" viewBox="0 0 30 26" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M26.8315 0.383301H8.57857C7.73894 0.383301 7.08183 0.867056 6.64376 1.5996L0.0605469 12.8227L6.64376 24.032C7.08183 24.7645 7.73894 25.2621 8.57857 25.2621H26.8315C28.17 25.2621 29.2652 24.0182 29.2652 22.4978V3.14761C29.2652 1.62724 28.17 0.383301 26.8315 0.383301ZM23.1809 17.7846L21.4651 19.7335L17.0966 14.7715L12.7281 19.7335L11.0123 17.7846L15.3808 12.8227L11.0123 7.86076L12.7281 5.91192L17.0966 10.8739L21.4651 5.91192L23.1809 7.86076L18.8124 12.8227L23.1809 17.7846Z"
+													fill="#222222" />
+											</svg>
+										</button>
+									</td>
+								</tr>
+							</table>
+						</div>
+						<div class="tab-pane fade" id="pills-profile" role="tabpanel"
+							aria-labelledby="pills-qrcode-tab">
+							<svg height="271.81177" width="271.81177" viewBox="0 0 271.81177 271.81177">
+								<style>
+									.st0 {
+										fill: #FFFFFF;
+									}
+
+									.st1 {
+										fill: #D8D9D9;
+									}
+
+									.st2 {
+										fill: none;
+										stroke: #010202;
+										stroke-width: 2;
+										stroke-linejoin: round;
+										stroke-miterlimit: 10;
+									}
+									.st5 {
+										fill: #010202;
+									}
+
+									.st6 {
+										opacity: 0.5;
+										fill: url(#SVGID_1_);
+									}
+
+									.st7 {
+										fill: none;
+									}
+								</style>
+								<linearGradient
+									gradientTransform="matrix(0.79944637,0,0,0.79944637,-7.9944637,60.193773)"
+									y2="230.26131" x2="224.0125" y1="159.6852" x1="224.0125"
+									gradientUnits="userSpaceOnUse" id="SVGID_1_">
+									<stop style="stop-color:#FFFFFF;stop-opacity:0" offset="0" />
+									<stop style="stop-color:#FBFDFB;stop-opacity:0.1368" offset="0.1368" />
+									<stop style="stop-color:#EDF7EF;stop-opacity:0.286" offset="0.286" />
+									<stop style="stop-color:#D8EEDC;stop-opacity:0.4411" offset="0.4411" />
+									<stop style="stop-color:#B9E0C1;stop-opacity:0.6003" offset="0.6003" />
+									<stop style="stop-color:#92CF9E;stop-opacity:0.7627" offset="0.7627" />
+									<stop style="stop-color:#62BB75;stop-opacity:0.9253" offset="0.9253" />
+									<stop style="stop-color:#4AB05F" offset="1" />
+								</linearGradient>
+								<g transform="translate(0,-68.188237)" id="g962">
+									<rect x="207.29643" y="313.69821" class="st0" width="62.596653" height="26.301786"
+										id="rect4" style="stroke-width:0.799446" />
+									<g id="g12" transform="matrix(0.79944637,0,0,0.79944637,-7.9944637,60.193773)">
+										<path class="st1"
+											d="m 205.9,10.5 h -27.8 v 6.1 h 24.7 v 24.7 h 6.1 V 13.6 c 0,-1.7 -1.3,-3.1 -3,-3.1 z"
+											id="path6" />
+										<path class="st1"
+											d="M 16.1,178.7 H 10 v 27.8 c 0,1.7 1.4,3.1 3.1,3.1 h 27.8 v -6.1 H 16.1 Z"
+											id="path8" />
+										<path class="st1"
+											d="m 10,13.1 v 27.8 h 6.1 V 16.1 H 40.8 V 10 H 13.1 C 11.4,10 10,11.4 10,13.1 Z"
+											id="path10" />
+									</g>
+									<path class="st2" d="M 256.62228,242.86727" id="path14" />
+									<path class="st2" d="M 256.62228,308.18204" id="path16" />
+									<rect x="116.95901" y="144.05569" class="fill-primary-3" width="109.12443"
+										height="163.24695" id="rect18" style="stroke-width:0.799446" />
+									<g id="g28" transform="matrix(0.79944637,0,0,0.79944637,-7.9944637,60.193773)">
+										<path class="fill-primary"
+											d="m 273.3,155.3 h -14.2 v 4.4 h 12 v 12 h 4.4 v -14.2 c 0,-1.2 -1,-2.2 -2.2,-2.2 z"
+											id="path20" />
+										<path class="fill-primary"
+											d="m 177,242.2 h -4.4 v 14.2 c 0,1.2 1,2.2 2.2,2.2 H 189 v -4.4 h -12 z"
+											id="path22" />
+										<path class="fill-primary"
+											d="m 172.6,157.5 v 14.2 h 4.4 v -12 h 12 v -4.4 h -14.2 c -1.2,0 -2.2,1 -2.2,2.2 z"
+											id="path24" />
+										<path class="fill-primary"
+											d="m 271.1,254.2 h -12 v 4.4 h 14.2 c 1.2,0 2.2,-1 2.2,-2.2 v -14.2 h -4.4 z"
+											id="path26" />
+									</g>
+									<g id="g32" transform="matrix(0.79944637,0,0,0.79944637,-7.9944637,60.193773)">
+										<path class="st5"
+											d="m 205.9,208.6 h 3.3 v 3.3 h 3.3 v 3.3 H 196 v -3.3 h 3.3 v -6.6 h 6.6 v 3.3 c 0,0 0,0 0,0 z m 42.9,29.7 h 3.3 V 235 h -3.3 z m -39.6,-29.7 h 3.3 v -3.3 h -3.3 z m 46.2,29.7 h 3.3 V 235 h -3.3 z m -39.6,3.3 h 6.6 v -3.3 h -6.6 c 0,0 0,3.3 0,3.3 z m 29.7,0 v -3.3 h -3.3 v 3.3 z m -13.2,0 h 3.3 V 235 h -3.3 z m -26.4,-42.9 v 3.3 h 9.9 v -3.3 z m -3.3,3.3 v -3.3 H 196 v 6.6 h 3.3 V 202 c 0,0 3.3,0 3.3,0 z m 9.9,-6.6 h -23.1 v -23.1 h 23.1 z m -3.3,-19.8 h -16.5 v 16.5 h 16.5 z M 196,235 h 9.9 v -9.9 H 196 Z m 33,-3.3 v 3.3 h 3.3 v -3.3 z M 205.9,178.9 H 196 v 9.9 h 9.9 c 0,0 0,-9.9 0,-9.9 z m 52.8,-6.6 v 23.1 h -23.1 v -23.1 z m -3.3,3.3 h -16.5 v 16.5 h 16.5 c 0,0 0,-16.5 0,-16.5 z m -66,42.9 h 23.1 v 23.1 h -23.1 z m 3.3,19.8 h 16.5 v -16.5 h -16.5 z m 0,-39.6 h -3.3 v 16.5 h 3.3 z m 42.9,16.5 v 3.3 h 3.3 v -3.3 z m -9.9,13.2 v -3.3 h -3.3 v 3.3 h -6.6 v 6.6 h 6.6 v 3.3 h 3.3 v -6.6 h 3.3 v -3.3 z m -9.9,-42.9 h 6.6 v -3.3 h -6.6 c 0,0 0,3.3 0,3.3 z m 26.4,26.4 h 6.6 v 3.3 h 3.3 v -9.9 h -3.3 v -6.6 h -3.3 v 9.9 h -9.9 v 3.3 h 3.3 v 3.3 h 3.3 z m 3.3,9.9 h -3.3 v -3.3 h -3.3 v 6.6 H 229 v 3.3 h 6.6 v 6.6 h 3.3 v 3.3 h 3.3 v -6.6 h 13.2 v -3.3 h -9.9 z m 0,0 h 3.3 v -6.6 h -3.3 z m -26.4,0 v -3.3 h 3.3 v -3.3 h 3.3 v -3.3 h 3.3 v -6.6 h 9.9 v -6.6 h -3.3 v 3.3 h -3.3 V 188.8 H 229 v -6.6 h 3.3 v -9.9 H 229 v 6.6 h -3.3 v -6.6 h -9.9 v 6.6 h 3.3 v -3.3 h 3.3 v 6.6 h 3.3 v 9.9 h 3.3 v 3.3 h -3.3 v 6.6 h -3.3 v -6.6 h -3.3 v -3.3 h -3.3 v 6.6 h 3.3 v 3.3 h -3.3 v 9.9 h 3.3 v -6.6 h 3.3 v 6.6 h -3.3 v 3.3 h -3.3 v 9.9 h 6.6 v -3.3 z m 36.3,3.3 v -3.3 h -6.6 v 3.3 z m -3.3,-46.2 h -9.9 v 9.9 h 9.9 z m -26.4,42.9 h 6.6 v -3.3 H 229 v -3.3 h -3.3 z m 6.6,-6.6 v -3.3 H 229 v 3.3 z M 252.1,202 h 6.6 v -3.3 h -6.6 z m 3.3,26.4 h 3.3 v -3.3 h -3.3 z m 0,-19.8 h 3.3 v -3.3 h -3.3 z m -29.7,-16.5 h -3.3 v 3.3 h 3.3 z"
+											id="path30" />
+									</g>
+									<rect x="133.66743" y="187.86536" class="st6" width="74.828178" height="56.440914"
+										id="rect51" style="fill:url(#SVGID_1_);stroke-width:0.799446" />
+									<path class="st0"
+										d="M 254.46378,313.85811 V 207.77157 c 0,-15.66915 -12.7112,-28.3004 -28.3004,-28.3004 h -1.99862 v 35.33553 l 6.95518,6.95518 -23.42377,-23.42377 c -1.75879,-1.75879 -4.71674,-1.75879 -6.47552,0 l -3.11784,3.11784 c -7.11507,7.11507 -7.11507,18.70704 0,25.90206 l 25.98201,25.98201 v 0 c -9.99308,3.27773 -16.38865,13.83042 -16.38865,25.2625 0,11.27219 6.6354,22.30455 16.38865,25.82212 v 9.43347 c 0.0799,0 30.37896,0 30.37896,0 z"
+										id="path53" style="stroke-width:0.799446" />
+									<path class="st7"
+										d="m 209.69478,278.60252 c 0,9.6733 5.11646,18.78699 12.47137,22.78422 v -45.16872 c -7.5148,3.7574 -12.47137,12.39142 -12.47137,22.3845 z"
+										id="path55" style="stroke-width:0.799446" />
+									<path class="st7"
+										d="m 121.11612,124.70909 h 7.43486 c 0,0 0,-4.87662 0,-8.87385 -3.83735,1.439 -6.71535,4.79668 -7.43486,8.87385 z"
+										id="path57" style="stroke-width:0.799446" />
+									<g id="g91" transform="matrix(0.79944637,0,0,0.79944637,-7.9944637,60.193773)">
+										<polygon class="st1" points="93.3,171.1 93.3,177.5 106.2,177.5 106.2,171.1 "
+											id="polygon59" />
+										<polygon class="st1" points="125.6,177.5 132.1,177.5 132.1,164.6 125.6,164.6 "
+											id="polygon61" />
+										<polygon class="st1" points="125.6,158.2 119.2,158.2 119.2,164.6 125.6,164.6 "
+											id="polygon63" />
+										<path class="st1"
+											d="m 93.3,125.9 v 19.4 h 12.9 v -6.5 h -6.4 v -6.5 h 6.4 v -6.4 h 6.5 v -6.5 h 6.5 v 6.5 h -6.5 v 12.9 0 h 12.9 v -6.5 h -6.5 v -6.4 h 6.5 v -6.5 h -6.5 v -12.9 h 19.4 V 93.6 H 132 v 6.5 h -6.5 V 74.2 H 119 V 61.3 h 6.5 V 42 H 119 v 12.9 h -6.5 V 42 H 93.3 v 12.9 h 6.5 v -6.5 h 6.4 V 61.3 H 93.3 v 6.5 h 12.9 v -6.5 h 6.4 v 19.4 h 6.5 v 6.5 h -6.4 v -6.5 h -6.5 v 6.5 h 6.4 v 12.9 h -6.5 v -13 H 99.7 V 80.6 H 93.2 V 93.5 H 74 v 6.5 h 19.4 v 19.4 h 6.5 v -12.9 h 6.4 v 12.9 h -6.4 v 6.5 z m 6.5,-25.8 h -6.4 v -6.5 h 6.4 z"
+											id="path65" />
+										<polygon class="st1"
+											points="156.3,119.4 156.3,93.6 151.4,93.6 151.4,113 132.1,113 132.1,119.4 138.5,119.4 138.5,125.9 145,125.9 145,119.4 "
+											id="polygon67" />
+										<polygon class="st1"
+											points="67.5,93.6 54.6,93.6 54.6,106.5 61.1,106.5 61.1,100.1 67.5,100.1 "
+											id="polygon69" />
+										<path class="st1"
+											d="m 132.1,42 v 45.2 h 24.3 v -3.8 c 0,-0.9 0.1,-1.8 0.2,-2.6 h -18 V 48.4 h 32.3 c 0,0 0,8 0,16.1 1.6,-0.4 3.3,-0.7 5.1,-0.7 h 1.4 V 42 Z"
+											id="path71" />
+										<rect x="54.599998" y="54.900002" class="st1" width="19.4" height="19.4"
+											id="rect73" />
+										<path class="st1"
+											d="M 86.9,42 H 41.7 V 87.2 H 86.9 Z M 80.4,80.7 H 48.1 V 48.4 h 32.3 z"
+											id="path75" />
+										<polygon class="st1"
+											points="54.6,119.4 54.6,125.9 86.9,125.9 86.9,119.4 80.4,119.4 80.4,113 86.9,113 86.9,106.5 80.4,106.5 80.4,113 74,113 74,106.5 61.1,106.5 61.1,119.4 "
+											id="polygon77" />
+										<path class="st1"
+											d="m 145,74.2 h 13.6 c 1.4,-2.6 3.4,-4.9 5.7,-6.6 V 54.9 H 145 Z"
+											id="path79" />
+										<polygon class="st1"
+											points="119.2,145.3 119.2,151.7 112.7,151.7 112.7,151.7 112.7,145.3 106.2,145.3 106.2,151.7 93.3,151.7 93.3,164.6 106.2,164.6 106.2,171.1 106.2,171.1 106.2,171.1 112.7,171.1 112.7,158.2 119.2,158.2 119.2,158.2 119.2,158.2 119.2,151.7 132.1,151.7 132.1,164.6 138.5,164.6 138.5,171.1 145,171.1 145,171.1 145,171.1 145,158.2 156.3,158.2 156.3,151.7 151.4,151.7 151.4,138.8 156.3,138.8 156.3,125.9 151.4,125.9 151.4,138.8 145,138.8 145,132.3 138.5,132.3 138.5,125.9 132.1,125.9 132.1,132.3 138.5,132.3 138.5,145.3 "
+											id="polygon81" />
+										<polygon class="st1" points="145,177.5 151.4,177.5 151.4,171.1 145,171.1 "
+											id="polygon83" />
+										<rect x="54.599998" y="145.3" class="st1" width="19.4" height="19.4"
+											id="rect85" />
+										<path class="st1"
+											d="M 41.7,177.5 H 86.9 V 132.3 H 41.7 Z m 6.4,-38.7 h 32.3 v 32.3 H 48.1 Z"
+											id="path87" />
+										<rect x="41.700001" y="93.599998" class="st1" width="6.5" height="32.299999"
+											id="rect89" />
+									</g>
+									<path class="st5"
+										d="m 269.89309,311.85949 h -13.4307 V 207.77157 c 0,-16.70843 -13.59058,-30.29901 -30.29901,-30.29901 v 0 -50.6849 c 0,-8.63403 -7.03513,-15.58921 -15.58921,-15.58921 H 132.7081 c -1.43901,0 -2.79807,0.23984 -4.07718,0.55961 -1.91867,0.47967 -3.59751,1.35906 -5.1964,2.47829 -1.91867,1.439 -3.51756,3.19778 -4.55685,5.27634 -0.79944,1.5989 -1.35905,3.35768 -1.67883,5.1964 -0.08,0.71951 -0.15989,1.35906 -0.15989,2.07857 v 197.54319 c 0,8.63402 7.03513,15.58921 15.5892,15.58921 h 77.86608 c 8.63402,0 15.5892,-7.03513 15.5892,-15.58921 v -8.55407 h 41.81105 V 340 h 3.91728 v -26.14189 c 0,-1.11923 -0.87939,-1.99862 -1.91867,-1.99862 z m -47.647,1.99862 v 10.55269 c 0,6.47551 -5.27635,11.67191 -11.67192,11.67191 H 132.7081 c -6.47552,0 -11.67192,-5.27634 -11.67192,-11.67191 V 126.78766 c 0,-0.71951 0.0799,-1.43901 0.15989,-2.07857 0.7195,-4.07717 3.59751,-7.43485 7.43485,-8.87385 1.27911,-0.47967 2.63817,-0.7195 4.07718,-0.7195 h 9.83319 c 0.23983,0 0.39972,0.0799 0.55961,0.15989 0.47967,0.15989 0.7195,0.63955 0.7195,1.11922 0,0 0,0 0,0 0,0 0,0 0,0.0799 0,3.67745 2.95795,6.6354 6.63541,6.6354 h 43.40993 c 3.67746,0 6.63541,-2.95795 6.63541,-6.6354 0,0 0,-0.0799 0,-0.0799 0,-0.7195 0.55961,-1.19917 1.27911,-1.19917 0,0 8.71397,0 8.71397,0 6.47551,0 11.67192,5.27635 11.67192,11.67192 v 52.60357 30.6188 L 209.13517,196.8991 c -2.47828,-2.47828 -6.79529,-2.47828 -9.19363,0 l -3.11784,3.11784 c -7.91452,7.91452 -7.91452,20.70566 0,28.62018 l 23.90344,23.90345 c -9.03374,4.39695 -14.8697,14.46998 -14.8697,25.98201 0,11.8318 6.79529,23.02405 16.38865,27.18117 z m 30.29902,-1.99862 h -26.38173 v -7.5148 c 0,-0.79944 -0.47967,-1.59889 -1.27912,-1.83872 -0.87939,-0.31978 -1.75878,-0.7195 -2.63817,-1.19917 -7.35491,-3.99723 -12.47136,-13.11092 -12.47136,-22.78422 0,-9.91314 4.95656,-18.54716 12.47136,-22.3845 0.79945,-0.39973 1.59889,-0.7195 2.39834,-1.03928 0.15989,-0.08 0.39972,-0.08 0.55961,-0.23984 0.79945,-0.47966 1.11923,-1.35906 0.87939,-2.23845 -0.0799,-0.39972 -0.31978,-0.7195 -0.63955,-0.95933 l -3.19779,-3.19779 v 0 l -22.70428,-22.70427 c -6.39557,-6.39558 -6.39557,-16.70843 0,-23.104 l 3.11784,-3.11785 c 0.95934,-0.95933 2.71812,-0.95933 3.67746,0 l 23.42378,23.42378 c 0.79944,0.79945 1.99861,0.79945 2.79806,0 0.79944,-0.79944 0.79944,-1.99861 0,-2.79806 l -6.39557,-6.39557 v -32.53747 0 c 14.54992,0 26.38173,11.83181 26.38173,26.38173 z"
+										id="path93" style="stroke-width:0.799446" />
+								</g>
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="d-flex justify-content-between align-items-center mb-3">
+					<input type="reset" class="reset" value="Start over">
+					<input type="submit" class="btn main-btn" value="Receive payment" id="cta">
+				</div>
+			</form>
+		</div>
+	</main>
+
+
+	<!-- Plugins
+	================================================== -->
+
+	<!-- jQuery -->
+	<script src="../assets/js/jquery-3.4.1.slim.min.js"></script>
+	<!-- PooperJS -->
+	<script src="../assets/js/popper.min.js"></script>
+	<!-- Bootstrap -->
+	<script src="../assets/js/bootstrap.min.js"></script>
+	<!-- intlTelInput -->
+	<script src="../assets/js/intlTelInput.js"></script>
+	<!-- Application -->
+	<script src="../assets/js/main.js"></script>
+</body>
+
+</html>

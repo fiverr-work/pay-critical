@@ -1,0 +1,118 @@
+*,
+*::after,
+*::before {
+    margin: 0px;
+    padding: 0px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+/**
+ * 1. Correct text resizing oddly in IE 6/7 when body `font-size` is set using
+ *    `em` units.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+
+html {
+    font-size: 100%; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+    -ms-text-size-adjust: 100%; /* 2 */
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: $background-color;
+
+    // Scrollbar customization
+    /* width */
+    &::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background-color: $primary-color;
+        border-radius: 5px;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: $primary-dark-color;
+    }
+}
+
+a,
+a:visited {
+    cursor: pointer;
+    transition: color 400ms ease-in-out;
+
+    &:focus {
+        outline: thin dotted;
+        outline-color: $primary-color;
+    }
+    &:active,
+    &:hover {
+        outline: 0;
+        text-decoration: none;
+        transition: color 400ms ease-in-out;
+    }
+}
+
+button {
+    border-style: solid;
+    &:focus {
+        outline: thin dotted;
+        outline-color: $primary-color;
+    }
+}
+
+svg {
+    path {
+        transition: stroke 400ms ease-in-out, fill 400ms ease-in-out;
+    }
+    &:hover {
+        path {
+            transition: stroke 400ms ease-in-out, fill 400ms ease-in-out;
+        }
+    }
+}
+
+input,
+textarea {
+    padding: 10px 20px;
+    &:focus {
+        outline-color: $primary-color;
+    }
+}
+
+select[multiple]:focus {
+    outline: none;
+}
+
+li {
+    list-style: none;
+}
+
+td,
+th {
+    vertical-align: middle !important;
+}
+
+::-webkit-scrollbar {
+    width: 0px; /* Remove scrollbar space */
+    background: transparent; /* Optional: just make scrollbar invisible */
+}
+
+::selection {
+    background-color: rgba($primary-color, 0.5);
+}
